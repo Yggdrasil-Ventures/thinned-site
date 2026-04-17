@@ -1,0 +1,226 @@
+/* Thinned — Shared site styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.card {
+  background: #24243e;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 520px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+}
+
+.subtitle {
+  color: #9090a0;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+ul {
+  margin: 0 0 24px 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #c0c0d0;
+}
+
+a { color: #8a82ff; }
+a:hover { color: #a9a3ff; }
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #b0b0c0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #3a3a5e;
+  border-radius: 8px;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+input:focus { outline: none; border-color: #6c63ff; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.btn-primary { background: #6c63ff; color: #fff; }
+.btn-primary:hover { background: #5a52e0; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-danger { background: #c4746e; color: #fff; }
+.btn-danger:hover { background: #b0635d; }
+.btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.notice {
+  background: #2a2a4a;
+  border-left: 3px solid #c4746e;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.info-notice {
+  background: #2a2a4a;
+  border-left: 3px solid #6c63ff;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.success-msg {
+  text-align: center;
+  color: #7eb77f;
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+.error-msg {
+  color: #c4746e;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 12px;
+  color: #606070;
+}
+
+.footer a { color: #8080a0; }
+
+/* Legal pages — wider card for long-form content */
+.card.legal {
+  max-width: 720px;
+  align-self: flex-start;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: #d0d0e0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #1a1a2e;
+  color: #b0b0c0;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #3a3a5e;
+}
+
+tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2a4a;
+  color: #c0c0d0;
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody td strong {
+  color: #e0e0e0;
+}
+
+.btn-oauth {
+  background: #2a2a4a;
+  color: #e0e0e0;
+  border: 1px solid #3a3a5e;
+}
+.btn-oauth:hover { background: #33335a; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #606070;
+  font-size: 13px;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #3a3a5e;
+}
+.divider span { padding: 0 12px; }
+
+.hidden { display: none; }
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

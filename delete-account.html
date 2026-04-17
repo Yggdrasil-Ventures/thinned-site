@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — Thinned</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>DELETE ACCOUNT</h1>
+    <p class="subtitle">Thinned — Miniature Painting Journal</p>
+
+    <!-- Step 1: Sign in -->
+    <div id="login-view">
+      <p>To delete your account, first sign in to verify your identity.</p>
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="your@email.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Your password" required>
+
+      <p id="login-error" class="error-msg hidden"></p>
+
+      <button class="btn btn-primary" id="login-btn" onclick="signIn()">
+        Sign In
+      </button>
+
+      <div class="divider"><span>or</span></div>
+
+      <button class="btn btn-oauth" id="google-btn" onclick="signInWithGoogle()">
+        <svg width="18" height="18" viewBox="0 0 18 18" style="vertical-align: middle; margin-right: 8px;">
+          <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z"/>
+          <path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.997 8.997 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332Z"/>
+          <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58Z"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <button class="btn btn-oauth" id="apple-btn" onclick="signInWithApple()" style="margin-top: 10px;">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="#fff" style="vertical-align: middle; margin-right: 8px;">
+          <path d="M13.545 8.32c-.022-2.272 1.854-3.364 1.938-3.416-1.054-1.542-2.695-1.754-3.28-1.778-1.396-.142-2.727.822-3.436.822-.709 0-1.805-.801-2.968-.78C4.36 3.192 3.01 4.03 2.26 5.34.735 7.993 1.882 11.89 3.345 14.04c.735 1.053 1.61 2.236 2.76 2.194 1.107-.044 1.526-.717 2.864-.717 1.338 0 1.714.717 2.882.694 1.192-.02 1.948-1.074 2.676-2.131.844-1.222 1.19-2.405 1.212-2.466-.026-.012-2.326-.893-2.35-3.542l.156.248Z"/>
+          <path d="M11.34 2.004c.61-.74.822-1.736.732-2.004-.703.028-1.554.47-2.058 1.06-.452.524-.849 1.36-.742 2.163.784.06 1.586-.4 2.068-1.22Z"/>
+        </svg>
+        Continue with Apple
+      </button>
+    </div>
+
+    <!-- Step 2: Confirm deletion -->
+    <div id="confirm-view" class="hidden">
+      <p>Signed in as <strong id="user-email"></strong></p>
+
+      <div class="notice">
+        Deleting your account will <strong>permanently remove</strong> all of your data, including:
+      </div>
+
+      <ul>
+        <li>Your profile and account information</li>
+        <li>All projects and painting sessions</li>
+        <li>All recipes and shared recipe links</li>
+        <li>Paint inventory, custom paints, and ratings</li>
+        <li>All uploaded photos</li>
+      </ul>
+
+      <p>This action <strong>cannot be undone</strong>.</p>
+
+      <p id="confirm-error" class="error-msg hidden"></p>
+
+      <button class="btn btn-danger" id="delete-btn" onclick="confirmDelete()">
+        Permanently Delete My Account
+      </button>
+
+      <div style="margin-top: 12px;">
+        <button class="btn" style="background: #3a3a5e;" onclick="cancel()">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Success -->
+    <div id="success-view" class="hidden">
+      <p class="success-msg">
+        Your account has been deleted.<br><br>
+        All data has been permanently removed. You may now close this page.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>If you have questions, contact <a href="mailto:support@thinned.app">support@thinned.app</a></p>
+      <p style="margin-top: 8px;">
+        <a href="privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="terms-of-service.html">Terms of Service</a>
+      </p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    // These are public keys — safe to expose in client code
+    const SUPABASE_URL = 'https://lbtpkiqpphwitaukigfd.supabase.co';
+    const SUPABASE_ANON_KEY = '%%SUPABASE_ANON_KEY%%';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Handle OAuth redirect — check for session on page load
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user && (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED')) {
+        document.getElementById('user-email').textContent = session.user.email || session.user.id;
+        document.getElementById('login-view').classList.add('hidden');
+        document.getElementById('confirm-view').classList.remove('hidden');
+      }
+    });
+
+    // Expose functions to window for onclick handlers
+    window.signInWithGoogle = async function() {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.href }
+      });
+      if (error) {
+        document.getElementById('login-error').textContent = error.message;
+        document.getElementById('login-error').classList.remove('hidden');
+      }
+    };
+
+    window.signInWithApple = async function() {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'apple',
+        options: { redirectTo: window.location.href }
+      });
+      if (error) {
+        document.getElementById('login-error').textContent = error.message;
+        document.getElementById('login-error').classList.remove('hidden');
+      }
+    };
+
+    window.signIn = async function() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('login-error');
+      const btn = document.getElementById('login-btn');
+
+      errorEl.classList.add('hidden');
+
+      if (!email || !email.includes('@')) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (!password) {
+        errorEl.textContent = 'Please enter your password.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Signing in...';
+
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        errorEl.textContent = error.message;
+        errorEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+        return;
+      }
+
+      // Authenticated — show confirm step
+      document.getElementById('user-email').textContent = data.user.email;
+      document.getElementById('login-view').classList.add('hidden');
+      document.getElementById('confirm-view').classList.remove('hidden');
+    };
+
+    window.confirmDelete = async function() {
+      const errorEl = document.getElementById('confirm-error');
+      const btn = document.getElementById('delete-btn');
+
+      errorEl.classList.add('hidden');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Deleting account...';
+
+      const { data, error } = await supabase.functions.invoke('delete-account', {
+        method: 'POST',
+      });
+
+      if (error) {
+        errorEl.textContent = error.message || 'Deletion failed. Please try again.';
+        errorEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Permanently Delete My Account';
+        return;
+      }
+
+      // Success
+      document.getElementById('confirm-view').classList.add('hidden');
+      document.getElementById('success-view').classList.remove('hidden');
+    };
+
+    window.cancel = async function() {
+      await supabase.auth.signOut();
+      document.getElementById('confirm-view').classList.add('hidden');
+      document.getElementById('login-view').classList.remove('hidden');
+      document.getElementById('login-btn').disabled = false;
+      document.getElementById('login-btn').textContent = 'Sign In';
+      document.getElementById('email').value = '';
+      document.getElementById('password').value = '';
+    };
+  </script>
+</body>
+</html>
