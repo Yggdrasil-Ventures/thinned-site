@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thinned — A journal for miniature painters</title>
+<meta name="description" content="Thinned is a painting journal for tabletop miniature painters. Sessions, recipes, a paint library of 11,442 paints across 34 brands, and a colour wheel. iOS and Android. Coming soon.">
+<meta name="theme-color" content="#FFF8E7">
+<meta property="og:title" content="Thinned — A journal for miniature painters">
+<meta property="og:description" content="Sessions, recipes, and a paint library for tabletop miniature painters. Local-first. iOS and Android.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thinned.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Tokens ---------- */
+  :root{
+    --bg:          #FFF8E7;
+    --card:        #EDE4D3;
+    --ink:         #3C4142;
+    --meta:        #5E5344;
+    --meta-light:  #7A6E5A;
+    --accent:      #A67B5B;
+    --border:      #BBA88A;
+    --border-soft: #D8C9AA;
+    --white:       #FFFDF5;
+    --danger:      #C4746E;
+    --success:     #7A9A6D;
+
+    --maxw: 720px;
+    --gutter: 22px;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  /* ---------- Reset ---------- */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent); }
+  a:hover{ text-decoration-color: var(--accent); }
+  button{ font: inherit; color: inherit; }
+
+  body{
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ---------- Type ---------- */
+  h1,h2,h3,h4{
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.2;
+  }
+  p{ margin: 0 0 1em; text-wrap: pretty; }
+  .label{
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--meta);
+    font-weight: 300;
+  }
+  .meta{ color: var(--meta); font-size: 14px; }
+
+  /* ---------- Layout ---------- */
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  section{ padding: 56px 0; }
+  @media (min-width: 720px){ section{ padding: 80px 0; } }
+
+  .rule{
+    width: 72px; height: 1px;
+    background: var(--border);
+    border: 0;
+    margin: 28px auto;
+  }
+
+  .section-head{ text-align: center; margin-bottom: 40px; }
+  .section-head h2{
+    font-size: clamp(22px, 3.2vw, 28px);
+    letter-spacing: 0.18em;
+  }
+  .section-head .lede{
+    max-width: 46ch;
+    margin: 16px auto 0;
+    color: var(--meta);
+    font-size: 15px;
+  }
+
+  /* ---------- Top rail ---------- */
+  .rail{
+    border-bottom: 1px solid var(--border-soft);
+    background: color-mix(in oklab, var(--bg) 85%, #fff);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(4px);
+  }
+  .rail-inner{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px var(--gutter);
+    max-width: var(--maxw); margin: 0 auto;
+  }
+  .wordmark{
+    display: inline-flex; align-items: center;
+    text-decoration: none; color: var(--ink);
+    font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; font-size: 13px;
+  }
+  .rail-meta{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--meta-light);
+  }
+  @media (max-width: 480px){ .rail-meta{ display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top: 56px;
+    padding-bottom: 24px;
+    text-align: center;
+  }
+  .hero .plate{
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--meta);
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--card) 50%, var(--bg));
+  }
+  .hero h1{
+    font-size: clamp(44px, 12vw, 96px);
+    letter-spacing: 0.22em;
+    margin: 44px 0 10px;
+  }
+  .hero .tag{
+    font-weight: 300;
+    font-size: clamp(15px, 2.4vw, 18px);
+    color: var(--meta);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+  }
+  .hero .positioning{
+    max-width: 46ch;
+    margin: 0 auto 32px;
+    color: var(--ink);
+  }
+
+  /* Store CTAs */
+  .cta-row{
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .store{
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink);
+    color: var(--white);
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    padding: 10px 18px 10px 14px;
+    text-decoration: none;
+    min-width: 188px;
+    transition: background .15s ease;
+  }
+  .store:hover{ background: #2a2e2f; }
+  .store.disabled{ cursor: not-allowed; opacity: 0.95; }
+  .store .store-glyph{ width: 22px; height: 22px; flex: 0 0 22px; }
+  .store .store-glyph svg{ width: 22px; height: 22px; }
+  .store .store-copy{
+    display: flex; flex-direction: column; line-height: 1.05; text-align: left;
+  }
+  .store .store-copy .small{
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: color-mix(in oklab, var(--white) 80%, transparent);
+    font-weight: 300;
+  }
+  .store .store-copy .big{
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 400; margin-top: 2px;
+  }
+  .coming{
+    text-align: center;
+    font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase;
+    color: var(--meta-light);
+    margin-bottom: 14px;
+  }
+  .coming::before, .coming::after{ content: "· "; color: var(--border); }
+
+  /* ---------- Features ---------- */
+  .features{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 720px){
+    .features{ grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+  .feature{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 22px 20px;
+    position: relative;
+  }
+  .feature .idx{
+    position: absolute; top: 14px; right: 16px;
+    font-size: 10px; letter-spacing: 0.22em; color: var(--meta-light);
+  }
+  .feature .ico{
+    width: 38px; height: 38px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .feature .ico svg{ width: 18px; height: 18px; }
+  .feature h3{
+    font-size: 13px; letter-spacing: 0.18em; margin-bottom: 8px;
+  }
+  .feature p{ color: var(--meta); font-size: 15px; margin: 0; }
+  .feature .bullets{
+    margin: 12px 0 0;
+    padding: 0; list-style: none;
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 13px; color: var(--meta);
+  }
+  .feature .bullets li{
+    display: flex; gap: 10px; align-items: baseline;
+  }
+  .feature .bullets li::before{
+    content: ""; display: inline-block; width: 10px; height: 1px;
+    background: var(--border); flex: 0 0 10px; transform: translateY(-4px);
+  }
+  .stat-line{
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--meta-light);
+  }
+  .stat-line b{
+    font-weight: 400; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Pricing ---------- */
+  .prices{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 640px){
+    .prices{ grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+  .price{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 26px 24px 24px;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .price.pro{
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 20%, transparent);
+  }
+  .price .tier{
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--meta);
+  }
+  .price .amount{
+    display: flex; align-items: baseline; gap: 8px;
+    margin: 10px 0 6px;
+  }
+  .price .amount .big{
+    font-size: 44px; font-weight: 400; letter-spacing: 0.02em;
+    color: var(--ink); line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .price .amount .unit{
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--meta-light);
+  }
+  .price .terms{
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 6px 0 14px;
+  }
+  .price .terms .chip{
+    font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+  .price.pro .terms .chip{
+    background: var(--accent); color: var(--white);
+  }
+  .price .terms .small{
+    font-size: 12px; color: var(--meta);
+    font-style: italic;
+  }
+  .price ul{
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .price ul li{
+    font-size: 14px; color: var(--ink);
+    display: flex; gap: 10px; align-items: baseline;
+  }
+  .price ul li .tick{
+    flex: 0 0 12px; width: 12px; height: 12px; margin-top: 4px;
+  }
+  .price .pro-tag{
+    position: absolute; top: -10px; right: 20px;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px;
+  }
+
+  /* ---------- About as spec sheet ---------- */
+  .about-sheet{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .about-row{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 18px;
+    padding: 18px 22px;
+    align-items: baseline;
+  }
+  .about-row + .about-row{
+    border-top: 1px dashed var(--border);
+  }
+  .about-row .k{
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--meta);
+    white-space: nowrap;
+  }
+  .about-row .v{
+    font-size: 15px; color: var(--ink); line-height: 1.55;
+  }
+  .about-row .v em{
+    color: var(--meta); font-style: italic;
+  }
+  @media (max-width: 520px){
+    .about-row{ grid-template-columns: 1fr; gap: 4px; padding: 16px 18px; }
+  }
+
+  .tenets{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 520px){
+    .tenets{ grid-template-columns: 1fr; }
+  }
+  .tenet{
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    background: color-mix(in oklab, var(--bg) 80%, var(--card));
+  }
+  .tenet .glyph{
+    width: 22px; height: 22px; margin-bottom: 8px;
+  }
+  .tenet h4{
+    font-size: 11px; letter-spacing: 0.2em; margin-bottom: 6px;
+  }
+  .tenet p{
+    font-size: 13px; color: var(--meta); margin: 0; line-height: 1.5;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--border-soft);
+    padding: 36px 0 40px;
+    margin-top: 20px;
+    background: color-mix(in oklab, var(--bg) 94%, var(--card));
+  }
+  footer .foot{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  @media (min-width: 640px){
+    footer .foot{ grid-template-columns: 1.2fr 1fr 1fr; }
+  }
+  footer h4{
+    font-size: 10px; letter-spacing: 0.22em; margin-bottom: 12px; color: var(--meta);
+  }
+  footer ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  footer ul a{ color: var(--ink); text-decoration: none; font-size: 14px; }
+  footer ul a:hover{ color: var(--accent); }
+  .foot-wordmark{
+    font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; font-size: 13px; color: var(--ink);
+  }
+  .legal{
+    max-width: var(--maxw);
+    margin: 28px auto 0;
+    padding: 20px var(--gutter) 0;
+    border-top: 1px dashed var(--border);
+    font-size: 12px; color: var(--meta-light); line-height: 1.6;
+  }
+  .legal p{ margin: 0 0 6px; }
+
+  /* ---------- A11y / motion ---------- */
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  @keyframes gentle-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .hero .plate, .hero h1, .hero .tag, .hero .positioning, .cta-row{
+    animation: gentle-in .6s ease both;
+  }
+  .hero h1{ animation-delay: .06s; }
+  .hero .tag{ animation-delay: .1s; }
+  .hero .positioning{ animation-delay: .14s; }
+  .cta-row{ animation-delay: .2s; }
+</style>
+</head>
+<body>
+
+<!-- Top rail -->
+<header class="rail" role="banner">
+  <div class="rail-inner">
+    <a class="wordmark" href="/" aria-label="Thinned — home">Thinned</a>
+    <span class="rail-meta">Field edition · v.01</span>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <span class="plate">An app for miniature painters</span>
+
+    <h1 id="hero-title">Thinned</h1>
+    <div class="tag">A journal for miniature painters.</div>
+
+    <p class="positioning">
+      Track the sessions you sit down to paint. Save the recipes that worked.
+      Keep an honest record of the paints you own, rate, and use. Built for the
+      craft — not the dashboard.
+    </p>
+
+    <div class="coming" aria-label="Coming soon to the App Store and Google Play">Coming soon · iOS + Android</div>
+
+    <div class="cta-row" role="group" aria-label="Download links (coming soon)">
+      <!-- App Store placeholder -->
+      <a href="#" class="store disabled" aria-disabled="true" onclick="event.preventDefault();">
+        <span class="store-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFDF5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16.5 12.5 c0 -2.6 2.1 -3.9 2.2 -4 -1.2 -1.8 -3.1 -2 -3.8 -2 -1.6 -0.2 -3.1 0.9 -3.9 0.9 -0.8 0 -2.1 -0.9 -3.5 -0.9 -1.8 0 -3.5 1.1 -4.4 2.7 -1.9 3.3 -0.5 8.1 1.3 10.8 0.9 1.3 2 2.7 3.4 2.7 1.4 -0.1 1.9 -0.9 3.6 -0.9 1.7 0 2.1 0.9 3.6 0.9 1.5 0 2.4 -1.3 3.3 -2.6 1.1 -1.5 1.5 -3 1.5 -3.1 0 0 -2.8 -1.1 -2.8 -4.5 z"/>
+            <path d="M14.3 4.4 c0.7 -0.9 1.3 -2.1 1.1 -3.4 -1.1 0 -2.4 0.7 -3.2 1.6 -0.7 0.8 -1.3 2 -1.1 3.3 1.2 0.1 2.4 -0.6 3.2 -1.5 z"/>
+          </svg>
+        </span>
+        <span class="store-copy">
+          <span class="small">Coming soon on</span>
+          <span class="big">App Store</span>
+        </span>
+      </a>
+
+      <!-- Google Play placeholder -->
+      <a href="#" class="store disabled" aria-disabled="true" onclick="event.preventDefault();">
+        <span class="store-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFDF5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 2.5 L17 12 L4 21.5 Z"/>
+            <path d="M4 2.5 L14 12 L4 21.5"/>
+            <path d="M14 12 L20 8.5"/>
+            <path d="M14 12 L20 15.5"/>
+          </svg>
+        </span>
+        <span class="store-copy">
+          <span class="small">Coming soon on</span>
+          <span class="big">Google Play</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" aria-hidden="true">
+
+<!-- ===== Features ===== -->
+<section id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="features-title">Four tools, kept simple</h2>
+      <p class="lede">Built from the bench outward. Each tool does one thing, does it well, and stays out of the way when you're painting.</p>
+    </header>
+
+    <div class="features">
+      <!-- Sessions -->
+      <article class="feature">
+        <span class="idx">01</span>
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4.5 C 9 9, 6.8 12, 6.8 14.5 a5.2 5.2 0 0 0 10.4 0 C 17.2 12, 15 9, 12 4.5 Z"/>
+          </svg>
+        </div>
+        <h3>Sessions</h3>
+        <p>Start a timer when you sit down to paint. Capture photos, notes, and which paints you used. Finish with a ticked list of what you got done.</p>
+        <ul class="bullets">
+          <li>Timer, photos, notes, used-paints log</li>
+          <li>Tied to a project, or run as a quick session</li>
+        </ul>
+      </article>
+
+      <!-- Recipes -->
+      <article class="feature">
+        <span class="idx">02</span>
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18 L17 7"/>
+            <path d="M15 5 L19 9"/>
+            <path d="M5 8 L5 4 M3 6 L7 6"/>
+            <path d="M19 15 L19 12 M17.5 13.5 L20.5 13.5"/>
+          </svg>
+        </div>
+        <h3>Recipes</h3>
+        <p>Save the exact paint combinations and steps that worked. Share them with painters you game with via QR codes.</p>
+        <ul class="bullets">
+          <li>Ordered steps, per-paint notes</li>
+          <li>Share offline by QR — no account needed</li>
+        </ul>
+      </article>
+
+      <!-- Paint library -->
+      <article class="feature">
+        <span class="idx">03</span>
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 5 C 6 4, 10 4, 12 6 C 14 4, 18 4, 21 5 L21 19 C 18 18, 14 18, 12 20 C 10 18, 6 18, 3 19 Z"/>
+            <path d="M12 6 L12 20"/>
+          </svg>
+        </div>
+        <h3>Paint library</h3>
+        <p>A searchable index of paints across the major hobby brands. Track what you own, rate what you've used, and add custom mixes of your own.</p>
+        <ul class="bullets">
+          <li>Stock levels and wishlist</li>
+          <li>Ratings, custom mixes, filters</li>
+        </ul>
+        <div class="stat-line">
+          <span>Paints catalogued</span>
+          <b>11,442</b>
+        </div>
+        <div class="stat-line" style="margin-top:8px;padding-top:8px;border-top:0;">
+          <span>Brands</span>
+          <b>34</b>
+        </div>
+      </article>
+
+      <!-- Colour wheel + streak -->
+      <article class="feature">
+        <span class="idx">04</span>
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 C 6.5 3, 3 6.8, 3 11.5 C 3 15.2, 5.5 17, 8 17 C 9.2 17, 9.5 16, 10 15.2 C 10.6 14.2, 11.3 14, 12 14 L 17 14 C 19.8 14, 21 12.2, 21 10.3 C 21 6, 17 3, 12 3 Z"/>
+            <circle cx="8" cy="8" r="1"/>
+            <circle cx="12" cy="6.5" r="1"/>
+            <circle cx="16" cy="8" r="1"/>
+            <circle cx="17" cy="11.5" r="1"/>
+          </svg>
+        </div>
+        <h3>Colour wheel &amp; streak</h3>
+        <p>See your inventory mapped to the wheel — gaps and biases become obvious. A calendar heatmap keeps the streak honest.</p>
+        <ul class="bullets">
+          <li>Inventory plotted by hue, value, chroma</li>
+          <li>Daily heatmap — no notification nagging</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" aria-hidden="true">
+
+<!-- ===== Pricing ===== -->
+<section id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="pricing-title">Two tiers. No subscription.</h2>
+      <p class="lede">Use the whole paint library and core tools for free. If you want to go unlimited, unlock Pro once.</p>
+    </header>
+
+    <div class="prices">
+      <!-- Free -->
+      <article class="price">
+        <div class="tier">Free</div>
+        <div class="amount">
+          <span class="big">£0</span>
+        </div>
+        <div class="terms">
+          <span class="chip" style="border:1px solid var(--border); color: var(--meta);">Always free</span>
+          <span class="small">Everything you need to start.</span>
+        </div>
+        <ul>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#7A9A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> 5 projects</li>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#7A9A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> 25 recipes</li>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#7A9A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> Full paint library &amp; search</li>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#7A9A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> Sessions, colour wheel, streak</li>
+        </ul>
+      </article>
+
+      <!-- Pro -->
+      <article class="price pro">
+        <span class="pro-tag">Pro</span>
+        <div class="tier">Pro unlock</div>
+        <div class="amount">
+          <span class="big">£8.99</span>
+        </div>
+        <div class="terms">
+          <span class="chip">One-time purchase</span>
+          <span class="small">Not a subscription.</span>
+        </div>
+        <ul>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#A67B5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> Unlimited projects</li>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#A67B5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> Unlimited recipes</li>
+          <li><svg class="tick" viewBox="0 0 16 16" fill="none" stroke="#A67B5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg> Everything in Free, with no limits</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" aria-hidden="true">
+
+<!-- ===== About — as a spec sheet ===== -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="about-title">Built on the bench</h2>
+      <p class="lede">A solo project. Designed for the way a hobbyist actually works — notes between layers, recipes on the back of a blister, a collection that grows over years.</p>
+    </header>
+
+    <div class="about-sheet" role="group" aria-label="About Thinned">
+      <div class="about-row">
+        <div class="k">Maker</div>
+        <div class="v">One painter, building the tool they wanted. <em>Thinned is a workshop journal, not a social network.</em></div>
+      </div>
+      <div class="about-row">
+        <div class="k">Data</div>
+        <div class="v">Local-first by default — sessions, recipes, and paint data live on your device unless you choose otherwise.</div>
+      </div>
+      <div class="about-row">
+        <div class="k">Privacy</div>
+        <div class="v">No ads. No third-party analytics. No account required to paint.</div>
+      </div>
+      <div class="about-row">
+        <div class="k">Availability</div>
+        <div class="v">iOS and Android at launch. <em>Coming soon.</em></div>
+      </div>
+    </div>
+
+    <div class="tenets" aria-hidden="true">
+      <div class="tenet">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12 L11 15 L16 9"/></svg>
+        <h4>Own your data</h4>
+        <p>Exportable. Deletable. Nothing held hostage by a subscription.</p>
+      </div>
+      <div class="tenet">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7 L12 12 L15 14"/></svg>
+        <h4>Built slowly</h4>
+        <p>Shipped when it's right. Updated by someone who uses it at the bench.</p>
+      </div>
+      <div class="tenet">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7 L20 7"/><path d="M4 12 L20 12"/><path d="M4 17 L14 17"/></svg>
+        <h4>No nagging</h4>
+        <p>No streak anxiety, no push prompts, no "you haven't painted in X days" guilt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer role="contentinfo">
+  <div class="foot">
+    <div>
+      <span class="foot-wordmark">Thinned</span>
+      <p class="meta" style="margin-top:10px;font-size:13px;">A journal for miniature painters.<br>iOS and Android — coming soon.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/privacy-policy">Privacy policy</a></li>
+        <li><a href="/terms-of-service">Terms of service</a></li>
+        <li><a href="/delete-account">Delete account</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:support@thinned.app">support@thinned.app</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="legal">
+    <p>Published by Yggdrasil Ventures Limited, 124 City Road, London EC1V 2NX, United Kingdom.</p>
+    <p>© 2026 Yggdrasil Ventures Limited. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
