@@ -144,17 +144,9 @@
   .hero h1{
     font-size: clamp(26px, 5.6vw, 40px);
     letter-spacing: 0.12em;
-    margin: 0 0 12px;
+    margin: 0 0 18px;
     color: var(--accent);
     text-wrap: balance;
-  }
-  .hero .tag{
-    font-weight: 300;
-    font-size: clamp(15px, 2.4vw, 18px);
-    color: var(--meta);
-    font-style: italic;
-    letter-spacing: 0.02em;
-    margin-bottom: 20px;
   }
   .hero .positioning{
     max-width: 58ch;
@@ -184,8 +176,6 @@
     .fam{ grid-template-columns: 172px 1fr; gap: 18px; padding: 10px 0; }
   }
   .fam-name{ font-size: 12px; letter-spacing: 0.16em; line-height: 1.35; }
-  .fam-name a{ color: var(--ink); text-decoration: none; }
-  .fam-name a:hover{ color: var(--accent); }
   .ramp{
     list-style: none; margin: 0; padding: 0;
     display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
@@ -339,10 +329,9 @@
 <section class="hero" aria-labelledby="page-title">
   <div class="wrap">
     <h1 id="page-title">Warhammer Tone Pro colour chart</h1>
-    <p class="tag">All 150 paints, with hex codes.</p>
     <p class="positioning">
-      Warhammer Tone Pro is Games Workshop's paint range of 30 colours, each sold as five
-      numbered tones. Tone 1 is the darkest and tone 5 the lightest.
+      Warhammer Tone Pro is Games Workshop's newest paint range of 30 colours, each sold as
+      five numbered tones. Tone 1 is the darkest and tone 5 the lightest.
     </p>
   </div>
 </section>
@@ -355,7 +344,7 @@
 <section class="group" aria-labelledby="g-reds-and-oranges">
   <h2 class="group-title" id="g-reds-and-oranges">Reds and oranges</h2>
   <div class="fam" id="carmine-blades">
-    <h3 class="fam-name"><a href="#carmine-blades">Carmine Blades</a></h3>
+    <h3 class="fam-name">Carmine Blades</h3>
     <ol class="ramp" aria-label="Carmine Blades, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#3C262A" title="Carmine Blades 1: #3C262A">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -385,7 +374,7 @@
     </ol>
   </div>
   <div class="fam" id="bloodtoof-red">
-    <h3 class="fam-name"><a href="#bloodtoof-red">Bloodtoof Red</a></h3>
+    <h3 class="fam-name">Bloodtoof Red</h3>
     <ol class="ramp" aria-label="Bloodtoof Red, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#581E16" title="Bloodtoof Red 1: #581E16">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -415,7 +404,7 @@
     </ol>
   </div>
   <div class="fam" id="chotec-orange">
-    <h3 class="fam-name"><a href="#chotec-orange">Chotec Orange</a></h3>
+    <h3 class="fam-name">Chotec Orange</h3>
     <ol class="ramp" aria-label="Chotec Orange, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#93150B" title="Chotec Orange 1: #93150B">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -445,7 +434,7 @@
     </ol>
   </div>
   <div class="fam" id="ta-unar-ochre">
-    <h3 class="fam-name"><a href="#ta-unar-ochre">Ta&#x27;unar Ochre</a></h3>
+    <h3 class="fam-name">Ta&#x27;unar Ochre</h3>
     <ol class="ramp" aria-label="Ta&#x27;unar Ochre, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#BB5528" title="Ta&#x27;unar Ochre 1: #BB5528">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -478,7 +467,7 @@
 <section class="group" aria-labelledby="g-yellows-and-golds">
   <h2 class="group-title" id="g-yellows-and-golds">Yellows and golds</h2>
   <div class="fam" id="khemri-sands">
-    <h3 class="fam-name"><a href="#khemri-sands">Khemri Sands</a></h3>
+    <h3 class="fam-name">Khemri Sands</h3>
     <ol class="ramp" aria-label="Khemri Sands, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#6C4B12" title="Khemri Sands 1: #6C4B12">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -508,7 +497,7 @@
     </ol>
   </div>
   <div class="fam" id="hawkshroud-yellow">
-    <h3 class="fam-name"><a href="#hawkshroud-yellow">Hawkshroud Yellow</a></h3>
+    <h3 class="fam-name">Hawkshroud Yellow</h3>
     <ol class="ramp" aria-label="Hawkshroud Yellow, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#F69113" title="Hawkshroud Yellow 1: #F69113">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -538,7 +527,7 @@
     </ol>
   </div>
   <div class="fam" id="megaboss-yellow">
-    <h3 class="fam-name"><a href="#megaboss-yellow">Megaboss Yellow</a></h3>
+    <h3 class="fam-name">Megaboss Yellow</h3>
     <ol class="ramp" aria-label="Megaboss Yellow, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#F9AD00" title="Megaboss Yellow 1: #F9AD00">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -571,7 +560,7 @@
 <section class="group" aria-labelledby="g-greens">
   <h2 class="group-title" id="g-greens">Greens</h2>
   <div class="fam" id="plague-toad-venom">
-    <h3 class="fam-name"><a href="#plague-toad-venom">Plague Toad Venom</a></h3>
+    <h3 class="fam-name">Plague Toad Venom</h3>
     <ol class="ramp" aria-label="Plague Toad Venom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#49892D" title="Plague Toad Venom 1: #49892D">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -601,7 +590,7 @@
     </ol>
   </div>
   <div class="fam" id="kruleboyz-green">
-    <h3 class="fam-name"><a href="#kruleboyz-green">Kruleboyz Green</a></h3>
+    <h3 class="fam-name">Kruleboyz Green</h3>
     <ol class="ramp" aria-label="Kruleboyz Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#4A7D36" title="Kruleboyz Green 1: #4A7D36">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -631,7 +620,7 @@
     </ol>
   </div>
   <div class="fam" id="lustria-green">
-    <h3 class="fam-name"><a href="#lustria-green">Lustria Green</a></h3>
+    <h3 class="fam-name">Lustria Green</h3>
     <ol class="ramp" aria-label="Lustria Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#004816" title="Lustria Green 1: #004816">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -661,7 +650,7 @@
     </ol>
   </div>
   <div class="fam" id="kasrkin-green">
-    <h3 class="fam-name"><a href="#kasrkin-green">Kasrkin Green</a></h3>
+    <h3 class="fam-name">Kasrkin Green</h3>
     <ol class="ramp" aria-label="Kasrkin Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#001B1B" title="Kasrkin Green 1: #001B1B">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -691,7 +680,7 @@
     </ol>
   </div>
   <div class="fam" id="hierotek-green">
-    <h3 class="fam-name"><a href="#hierotek-green">Hierotek Green</a></h3>
+    <h3 class="fam-name">Hierotek Green</h3>
     <ol class="ramp" aria-label="Hierotek Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#00321C" title="Hierotek Green 1: #00321C">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -721,7 +710,7 @@
     </ol>
   </div>
   <div class="fam" id="green-morkshroom">
-    <h3 class="fam-name"><a href="#green-morkshroom">Green Morkshroom</a></h3>
+    <h3 class="fam-name">Green Morkshroom</h3>
     <ol class="ramp" aria-label="Green Morkshroom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#143230" title="Green Morkshroom 1: #143230">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -754,7 +743,7 @@
 <section class="group" aria-labelledby="g-teals-and-blues">
   <h2 class="group-title" id="g-teals-and-blues">Teals and blues</h2>
   <div class="fam" id="seraphon-blue">
-    <h3 class="fam-name"><a href="#seraphon-blue">Seraphon Blue</a></h3>
+    <h3 class="fam-name">Seraphon Blue</h3>
     <ol class="ramp" aria-label="Seraphon Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#002F34" title="Seraphon Blue 1: #002F34">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -784,7 +773,7 @@
     </ol>
   </div>
   <div class="fam" id="craventhrone-cloak">
-    <h3 class="fam-name"><a href="#craventhrone-cloak">Craventhrone Cloak</a></h3>
+    <h3 class="fam-name">Craventhrone Cloak</h3>
     <ol class="ramp" aria-label="Craventhrone Cloak, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#08232E" title="Craventhrone Cloak 1: #08232E">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -814,7 +803,7 @@
     </ol>
   </div>
   <div class="fam" id="stormwolf-blue">
-    <h3 class="fam-name"><a href="#stormwolf-blue">Stormwolf Blue</a></h3>
+    <h3 class="fam-name">Stormwolf Blue</h3>
     <ol class="ramp" aria-label="Stormwolf Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#233F55" title="Stormwolf Blue 1: #233F55">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -844,7 +833,7 @@
     </ol>
   </div>
   <div class="fam" id="scinari-blue">
-    <h3 class="fam-name"><a href="#scinari-blue">Scinari Blue</a></h3>
+    <h3 class="fam-name">Scinari Blue</h3>
     <ol class="ramp" aria-label="Scinari Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#004789" title="Scinari Blue 1: #004789">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -874,7 +863,7 @@
     </ol>
   </div>
   <div class="fam" id="blue-gorkshroom">
-    <h3 class="fam-name"><a href="#blue-gorkshroom">Blue Gorkshroom</a></h3>
+    <h3 class="fam-name">Blue Gorkshroom</h3>
     <ol class="ramp" aria-label="Blue Gorkshroom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#002356" title="Blue Gorkshroom 1: #002356">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -904,7 +893,7 @@
     </ol>
   </div>
   <div class="fam" id="ultramar-blue">
-    <h3 class="fam-name"><a href="#ultramar-blue">Ultramar Blue</a></h3>
+    <h3 class="fam-name">Ultramar Blue</h3>
     <ol class="ramp" aria-label="Ultramar Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#001A42" title="Ultramar Blue 1: #001A42">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -937,7 +926,7 @@
 <section class="group" aria-labelledby="g-violets-and-magentas">
   <h2 class="group-title" id="g-violets-and-magentas">Violets and magentas</h2>
   <div class="fam" id="shalaxi-violet">
-    <h3 class="fam-name"><a href="#shalaxi-violet">Shalaxi Violet</a></h3>
+    <h3 class="fam-name">Shalaxi Violet</h3>
     <ol class="ramp" aria-label="Shalaxi Violet, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#130040" title="Shalaxi Violet 1: #130040">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -967,7 +956,7 @@
     </ol>
   </div>
   <div class="fam" id="enrapturess-dusk">
-    <h3 class="fam-name"><a href="#enrapturess-dusk">Enrapturess Dusk</a></h3>
+    <h3 class="fam-name">Enrapturess Dusk</h3>
     <ol class="ramp" aria-label="Enrapturess Dusk, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#1E1435" title="Enrapturess Dusk 1: #1E1435">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -997,7 +986,7 @@
     </ol>
   </div>
   <div class="fam" id="hive-fleet-purple">
-    <h3 class="fam-name"><a href="#hive-fleet-purple">Hive Fleet Purple</a></h3>
+    <h3 class="fam-name">Hive Fleet Purple</h3>
     <ol class="ramp" aria-label="Hive Fleet Purple, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#1E1A40" title="Hive Fleet Purple 1: #1E1A40">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1027,7 +1016,7 @@
     </ol>
   </div>
   <div class="fam" id="magnus-the-red">
-    <h3 class="fam-name"><a href="#magnus-the-red">Magnus the Red</a></h3>
+    <h3 class="fam-name">Magnus the Red</h3>
     <ol class="ramp" aria-label="Magnus the Red, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#3A202D" title="Magnus the Red 1: #3A202D">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1057,7 +1046,7 @@
     </ol>
   </div>
   <div class="fam" id="eye-of-terror">
-    <h3 class="fam-name"><a href="#eye-of-terror">Eye of Terror</a></h3>
+    <h3 class="fam-name">Eye of Terror</h3>
     <ol class="ramp" aria-label="Eye of Terror, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#920030" title="Eye of Terror 1: #920030">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1090,7 +1079,7 @@
 <section class="group" aria-labelledby="g-skin-wood-and-bone">
   <h2 class="group-title" id="g-skin-wood-and-bone">Skin, wood and bone</h2>
   <div class="fam" id="carthalos-skin">
-    <h3 class="fam-name"><a href="#carthalos-skin">Carthalos Skin</a></h3>
+    <h3 class="fam-name">Carthalos Skin</h3>
     <ol class="ramp" aria-label="Carthalos Skin, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#241815" title="Carthalos Skin 1: #241815">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1120,7 +1109,7 @@
     </ol>
   </div>
   <div class="fam" id="celestine-skin">
-    <h3 class="fam-name"><a href="#celestine-skin">Celestine Skin</a></h3>
+    <h3 class="fam-name">Celestine Skin</h3>
     <ol class="ramp" aria-label="Celestine Skin, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#CD8169" title="Celestine Skin 1: #CD8169">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1150,7 +1139,7 @@
     </ol>
   </div>
   <div class="fam" id="gnarlwood">
-    <h3 class="fam-name"><a href="#gnarlwood">Gnarlwood</a></h3>
+    <h3 class="fam-name">Gnarlwood</h3>
     <ol class="ramp" aria-label="Gnarlwood, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#342928" title="Gnarlwood 1: #342928">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1180,7 +1169,7 @@
     </ol>
   </div>
   <div class="fam" id="necrolith-bone">
-    <h3 class="fam-name"><a href="#necrolith-bone">Necrolith Bone</a></h3>
+    <h3 class="fam-name">Necrolith Bone</h3>
     <ol class="ramp" aria-label="Necrolith Bone, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#877561" title="Necrolith Bone 1: #877561">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1213,7 +1202,7 @@
 <section class="group" aria-labelledby="g-greys">
   <h2 class="group-title" id="g-greys">Greys</h2>
   <div class="fam" id="dataslate-grey">
-    <h3 class="fam-name"><a href="#dataslate-grey">Dataslate Grey</a></h3>
+    <h3 class="fam-name">Dataslate Grey</h3>
     <ol class="ramp" aria-label="Dataslate Grey, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#2B2D28" title="Dataslate Grey 1: #2B2D28">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1243,7 +1232,7 @@
     </ol>
   </div>
   <div class="fam" id="blackstone-void">
-    <h3 class="fam-name"><a href="#blackstone-void">Blackstone Void</a></h3>
+    <h3 class="fam-name">Blackstone Void</h3>
     <ol class="ramp" aria-label="Blackstone Void, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#000208" title="Blackstone Void 1: #000208">
           <span class="sw-tone" aria-hidden="true">1</span>

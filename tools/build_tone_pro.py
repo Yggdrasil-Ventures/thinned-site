@@ -120,7 +120,7 @@ def render_grid(families: dict[str, dict[int, str]]) -> str:
         for fam in fams:
             fid = slugify(fam)
             out.append(f'  <div class="fam" id="{fid}">\n')
-            out.append(f'    <h3 class="fam-name"><a href="#{fid}">{html.escape(fam)}</a></h3>\n')
+            out.append(f'    <h3 class="fam-name">{html.escape(fam)}</h3>\n')
             out.append(f'    <ol class="ramp" aria-label="{html.escape(fam)}, tones 1 to 5">\n')
             for tone in range(1, 6):
                 out.append(swatch_li(fam, tone, families[fam][tone]))
