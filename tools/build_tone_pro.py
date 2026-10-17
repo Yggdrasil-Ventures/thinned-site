@@ -103,7 +103,7 @@ def swatch_li(family: str, tone: int, hex_colour: str) -> str:
     name = f"{family} {tone}"
     return (
         f'        <li class="sw {label_class(hex_colour)}" style="--c:{hex_colour}" '
-        f'title="{html.escape(name)} &#8212; {hex_colour}">\n'
+        f'title="{html.escape(name)}: {hex_colour}">\n'
         f'          <span class="sw-tone" aria-hidden="true">{tone}</span>\n'
         f'          <span class="vh">{html.escape(name)}</span>\n'
         f'          <code class="sw-hex">{hex_colour}</code>\n'
