@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Thinned — A journal for miniature painters</title>
-<meta name="description" content="Thinned is a painting journal for tabletop miniature painters. Sessions, recipes, a paint library of 11,442 paints across 34 brands, and a colour wheel. iOS and Android. Coming soon.">
+<meta name="description" content="Thinned is a painting journal for tabletop miniature painters. Sessions, recipes, a paint library of 11,594 paints across 34 brands, and a colour wheel. Available on iOS and Android.">
 <meta name="theme-color" content="#FFF8E7">
+<meta name="apple-itunes-app" content="app-id=6762445836">
 <meta property="og:title" content="Thinned — A journal for miniature painters">
 <meta property="og:description" content="Sessions, recipes, and a paint library for tabletop miniature painters. Local-first. iOS and Android.">
 <meta property="og:type" content="website">
@@ -194,13 +195,17 @@
     font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
     font-weight: 400; margin-top: 2px;
   }
-  .coming{
-    text-align: center;
-    font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase;
-    color: var(--meta-light);
-    margin-bottom: 14px;
+  /* Store badges: official artwork at 40px (Apple's minimum). Both stores ask
+     for clear space of a quarter of the badge height; the row's margins keep it. */
+  .store-badges{
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 14px;
   }
-  .coming::before, .coming::after{ content: "· "; color: var(--border); }
+  .store-badges a{ display: inline-flex; border-radius: 6px; }
+  .store-badges img{ height: 40px; width: auto; }
+  /* Google's PNG ships with its own clear space (41px of 250); trim it so both badges share one box. */
+  .store-badges .badge-play img{ height: 60px; margin: -10px; }
 
   /* ---------- Features ---------- */
   .features{
@@ -443,13 +448,13 @@
   }
 
   @keyframes gentle-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-  .hero .plate, .hero h1, .hero .tag, .hero .positioning, .cta-row{
+  .hero .plate, .hero h1, .hero .tag, .hero .positioning, .cta-row, .hero .store-badges{
     animation: gentle-in .6s ease both;
   }
   .hero h1{ animation-delay: .06s; }
   .hero .tag{ animation-delay: .1s; }
   .hero .positioning{ animation-delay: .14s; }
-  .cta-row{ animation-delay: .2s; }
+  .cta-row, .hero .store-badges{ animation-delay: .2s; }
 </style>
 </head>
 <body>
@@ -476,7 +481,14 @@
       craft — not the dashboard.
     </p>
 
-    <div class="coming" aria-label="Coming soon to the App Store and Google Play">Coming soon · iOS + Android</div>
+    <div class="store-badges" role="group" aria-label="Download Thinned">
+      <a class="badge-apple" href="https://apps.apple.com/gb/app/id6762445836">
+        <img src="/img/badge-app-store.svg" alt="Download on the App Store" width="120" height="40">
+      </a>
+      <a class="badge-play" href="https://play.google.com/store/apps/details?id=com.thinned.thinned">
+        <img src="/img/badge-google-play.png" alt="Get it on Google Play" width="155" height="60">
+      </a>
+    </div>
   </div>
 </section>
 
@@ -543,7 +555,7 @@
         </ul>
         <div class="stat-line">
           <span>Paints catalogued</span>
-          <b>11,442</b>
+          <b>11,594</b>
         </div>
         <div class="stat-line" style="margin-top:8px;padding-top:8px;border-top:0;">
           <span>Brands</span>
@@ -649,7 +661,7 @@
       </div>
       <div class="about-row">
         <div class="k">Availability</div>
-        <div class="v">iOS and Android at launch. <em>Coming soon.</em></div>
+        <div class="v">iOS and Android. Download it from the <a href="https://apps.apple.com/gb/app/id6762445836">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.thinned.thinned">Google Play</a>.</div>
       </div>
     </div>
 
@@ -678,7 +690,7 @@
   <div class="foot">
     <div>
       <span class="foot-wordmark">Thinned</span>
-      <p class="meta" style="margin-top:10px;font-size:13px;">A journal for miniature painters.<br>iOS and Android — coming soon.</p>
+      <p class="meta" style="margin-top:10px;font-size:13px;">A journal for miniature painters.<br>On the <a href="https://apps.apple.com/gb/app/id6762445836">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.thinned.thinned">Google Play</a>.</p>
     </div>
     <div>
       <h4>Site</h4>
@@ -699,6 +711,7 @@
   <div class="legal">
     <p>Published by Yggdrasil Ventures Limited, 124 City Road, London EC1V 2NX, United Kingdom.</p>
     <p>© 2026 Yggdrasil Ventures Limited. All rights reserved.</p>
+    <p>Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
   </div>
 </footer>
 
