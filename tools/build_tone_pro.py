@@ -116,11 +116,11 @@ def render_grid(families: dict[str, dict[int, str]]) -> str:
     for label, fams in GROUPS:
         gid = "g-" + slugify(label)
         out.append(f'<section class="group" aria-labelledby="{gid}">\n')
-        out.append(f'  <h3 class="group-title" id="{gid}">{html.escape(label)}</h3>\n')
+        out.append(f'  <h2 class="group-title" id="{gid}">{html.escape(label)}</h2>\n')
         for fam in fams:
             fid = slugify(fam)
             out.append(f'  <div class="fam" id="{fid}">\n')
-            out.append(f'    <h4 class="fam-name"><a href="#{fid}">{html.escape(fam)}</a></h4>\n')
+            out.append(f'    <h3 class="fam-name"><a href="#{fid}">{html.escape(fam)}</a></h3>\n')
             out.append(f'    <ol class="ramp" aria-label="{html.escape(fam)}, tones 1 to 5">\n')
             for tone in range(1, 6):
                 out.append(swatch_li(fam, tone, families[fam][tone]))

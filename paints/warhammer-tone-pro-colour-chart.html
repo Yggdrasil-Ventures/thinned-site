@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Thinned">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Warhammer Tone Pro colour chart: all 150 hex codes">
-<meta property="og:description" content="30 colour families, five numbered tones each, a hex code for every pot, plus the two mediums.">
+<meta property="og:description" content="30 colour families, five numbered tones each, a hex code for every pot.">
 <meta property="og:url" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart">
 <meta property="og:image" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart.png">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="article:modified_time" content="2026-10-17">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Warhammer Tone Pro colour chart: all 150 hex codes">
-<meta name="twitter:description" content="30 colour families, five numbered tones each, a hex code for every pot, plus the two mediums.">
+<meta name="twitter:description" content="30 colour families, five numbered tones each, a hex code for every pot.">
 <meta name="twitter:image" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,19 +100,6 @@
     margin: 20px auto;
   }
 
-  .section-head{ text-align: center; margin-bottom: 32px; }
-  .section-head h2{
-    font-size: clamp(20px, 3.2vw, 26px);
-    letter-spacing: 0.18em;
-    color: var(--accent);
-  }
-  .section-head .lede{
-    max-width: 50ch;
-    margin: 14px auto 0;
-    color: var(--meta);
-    font-size: 15px;
-  }
-
   /* ---------- Top rail ---------- */
   .rail{
     border-bottom: 1px solid var(--border-soft);
@@ -157,7 +144,7 @@
   .hero h1{
     font-size: clamp(26px, 5.6vw, 40px);
     letter-spacing: 0.12em;
-    margin: 28px 0 12px;
+    margin: 0 0 12px;
     color: var(--accent);
     text-wrap: balance;
   }
@@ -171,86 +158,14 @@
   }
   .hero .positioning{
     max-width: 58ch;
-    margin: 0 auto 26px;
+    margin: 0 auto;
     color: var(--ink);
-    text-align: left;
   }
-  .jump{
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink); text-decoration: none;
-    border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 9px 16px;
-    margin-bottom: 30px;
-  }
-  .jump:hover{ border-color: var(--accent); color: var(--accent); }
-  .jump svg{ width: 12px; height: 12px; }
-
-  /* Facts strip */
-  .facts{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    text-align: center;
-    margin: 0;
-  }
-  @media (min-width: 560px){ .facts{ grid-template-columns: repeat(4, 1fr); } }
-  .fact{ background: var(--card); padding: 14px 10px 12px; }
-  .fact .k{
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--meta);
-  }
-  .fact .v{
-    font-size: 20px; font-weight: 400; color: var(--ink);
-    margin: 4px 0 0; line-height: 1.2;
-    font-variant-numeric: tabular-nums;
-  }
-  .fact .v small{ display: block; margin-top: 2px; font-size: 12px; color: var(--meta-light); letter-spacing: 0.08em; font-weight: 300; }
-
-  /* ---------- Prose ---------- */
-  .prose{ max-width: 62ch; margin: 0 auto; }
-  .prose p{ color: var(--ink); }
-  .prose h3{
-    font-size: 12px; letter-spacing: 0.2em; color: var(--meta);
-    margin: 28px 0 10px;
-  }
-  .prose ul{ margin: 0 0 1em; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .prose li{ display: flex; gap: 12px; align-items: baseline; color: var(--ink); }
-  .prose li::before{
-    content: ""; display: inline-block; width: 10px; height: 1px;
-    background: var(--border); flex: 0 0 10px; transform: translateY(-4px);
-  }
-
-  /* ---------- Note (hex provenance) ---------- */
-  .note{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 14px 16px 6px;
-    font-size: 14px; line-height: 1.55;
-    color: var(--meta);
-    margin: 0 0 20px;
-  }
-  .note p{ margin-bottom: 8px; }
-  .note b{ font-weight: 400; color: var(--ink); }
 
   /* ---------- Chart ---------- */
-  .legend{
-    display: flex; flex-wrap: wrap; gap: 10px 18px; justify-content: center;
-    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--meta-light);
-    margin: 0 0 6px;
-  }
-  .legend span{ display: inline-flex; align-items: center; gap: 8px; }
-  .legend i{ display: inline-block; width: 14px; height: 14px; border-radius: 2px; border: 1px solid var(--border); }
-
+  #chart{ padding-top: 24px; }
   .group{ padding: 0; margin-top: 30px; }   /* override the generic section padding */
-  .group:first-child{ margin-top: 10px; }
+  .group:first-child{ margin-top: 0; }
   .group-title{
     font-size: 11px; letter-spacing: 0.24em; color: var(--meta);
     padding-bottom: 10px; margin-bottom: 4px;
@@ -301,42 +216,11 @@
   }
   .footnote{
     font-size: 13px; color: var(--meta-light); line-height: 1.55;
-    margin: 18px 0 0;
+    margin: 24px 0 0;
     padding-top: 14px;
     border-top: 1px dashed var(--border);
   }
   .footnote + .footnote{ border-top: 0; padding-top: 0; margin-top: 8px; }
-
-  /* ---------- Mediums (feature cards, as on the homepage) ---------- */
-  .features{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  @media (min-width: 640px){
-    .features{ grid-template-columns: 1fr 1fr; gap: 16px; }
-  }
-  .feature{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 22px 22px 20px;
-    position: relative;
-  }
-  .feature .idx{
-    position: absolute; top: 14px; right: 16px;
-    font-size: 10px; letter-spacing: 0.22em; color: var(--meta-light);
-  }
-  .feature .ico{
-    width: 38px; height: 38px;
-    border: 1.5px solid var(--ink);
-    border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center;
-    margin-bottom: 14px;
-  }
-  .feature .ico svg{ width: 18px; height: 18px; }
-  .feature h3{ font-size: 13px; letter-spacing: 0.18em; margin-bottom: 8px; }
-  .feature p{ color: var(--meta); font-size: 15px; margin: 0; }
 
   /* ---------- App CTA ---------- */
   .cta-card{
@@ -383,7 +267,7 @@
     font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
     font-weight: 400; margin-top: 2px;
   }
-  .cta-card .fine{ font-size: 12px; color: var(--meta-light); margin: 0; }
+  .cta-card .fine{ font-size: 12px; color: var(--meta-light); margin: 0 auto; }
 
   /* ---------- Footer (shared with index.html) ---------- */
   footer{
@@ -433,7 +317,7 @@
     *{ animation: none !important; transition: none !important; }
   }
   @media print{
-    .rail, .jump, #app, footer .foot{ display: none; }
+    .rail, #app, footer .foot{ display: none; }
     section{ padding: 18px 0; }
     .sw{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
@@ -454,97 +338,24 @@
 <!-- ===== Hero ===== -->
 <section class="hero" aria-labelledby="page-title">
   <div class="wrap">
-    <span class="plate">Every pot in the range</span>
-
     <h1 id="page-title">Warhammer Tone Pro colour chart</h1>
     <p class="tag">All 150 paints, with hex codes.</p>
-
     <p class="positioning">
       Warhammer Tone Pro is Games Workshop's paint range of 30 colours, each sold as five
-      numbered tones. Tone 1 is the darkest and tone 5 the lightest. This page lists every
-      paint in the range with a hex code sampled from GW's own swatch images, and the two
-      mediums sold alongside it.
+      numbered tones. Tone 1 is the darkest and tone 5 the lightest.
     </p>
-
-    <a class="jump" href="#chart">
-      Jump to the chart
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 1.5v9M2.5 7 6 10.5 9.5 7"/></svg>
-    </a>
-
-    <dl class="facts">
-      <div class="fact"><dt class="k">Paints</dt><dd class="v">150</dd></div>
-      <div class="fact"><dt class="k">Colour families</dt><dd class="v">30</dd></div>
-      <div class="fact"><dt class="k">Tones per family</dt><dd class="v">5 <small>1 dark → 5 light</small></dd></div>
-      <div class="fact"><dt class="k">Mediums</dt><dd class="v">2</dd></div>
-    </dl>
   </div>
 </section>
-
-<hr class="rule" aria-hidden="true">
-
-<!-- ===== About the range ===== -->
-<section id="about-tone-pro" aria-labelledby="about-title">
-  <div class="wrap">
-    <header class="section-head">
-      <h2 id="about-title">About the range</h2>
-      <p class="lede">Thirty colours, each one sold as five tones.</p>
-    </header>
-
-    <div class="prose">
-      <p>
-        Each Tone Pro colour comes as five pots numbered 1 to 5. The number is the pot's
-        place in its family: 1 is the darkest, 5 the lightest. To highlight Ultramar Blue 3
-        you go up to Ultramar Blue 4, and to shade it you go down to Ultramar Blue 2. The
-        range has 30 of these families, 150 paints in all.
-      </p>
-      <p>
-        The families run from reds through yellows, greens, blues and purples to skin tones,
-        browns, bone and grey. That is the order GW prints on its own chart, and the order
-        this page follows.
-      </p>
-
-      <h3>How to read the chart</h3>
-      <ul>
-        <li>Each row is one colour family. Tone 1 is on the left, tone 5 on the right.</li>
-        <li>Each swatch shows its tone number and hex code. The paint's full name is the family name plus the number, as printed on the pot.</li>
-        <li>Families are grouped by hue. The group labels are ours, not GW's.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" aria-hidden="true">
 
 <!-- ===== The chart ===== -->
-<section id="chart" aria-labelledby="chart-title">
+<section id="chart" aria-label="Colour chart">
   <div class="wrap">
-    <header class="section-head">
-      <h2 id="chart-title">The chart</h2>
-      <p class="lede">150 paints in 30 families. Tone 1 is the darkest, tone 5 the lightest.</p>
-    </header>
-
-    <aside class="note" aria-label="About the hex codes">
-      <p>
-        <b>About the hex codes.</b> Games Workshop doesn't publish colour codes for its
-        paints. These were sampled from the flat colour squares in GW's own Tone Pro chart
-        images, so they show the printed colour rather than paint on a model. Screens vary,
-        and paint changes with the undercoat beneath it. They are close enough to plan a
-        scheme with. They won't tell you what a pot looks like on a miniature.
-      </p>
-    </aside>
-
-    <div class="legend" aria-hidden="true">
-      <span><i style="background:#001A42"></i>Tone 1 · darkest</span>
-      <span><i style="background:#0D4F88"></i>Tone 3</span>
-      <span><i style="background:#6D9ECF"></i>Tone 5 · lightest</span>
-    </div>
-
     <div class="chart">
 <!-- tone-pro-grid:start -->
 <section class="group" aria-labelledby="g-reds-and-oranges">
-  <h3 class="group-title" id="g-reds-and-oranges">Reds and oranges</h3>
+  <h2 class="group-title" id="g-reds-and-oranges">Reds and oranges</h2>
   <div class="fam" id="carmine-blades">
-    <h4 class="fam-name"><a href="#carmine-blades">Carmine Blades</a></h4>
+    <h3 class="fam-name"><a href="#carmine-blades">Carmine Blades</a></h3>
     <ol class="ramp" aria-label="Carmine Blades, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#3C262A" title="Carmine Blades 1: #3C262A">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -574,7 +385,7 @@
     </ol>
   </div>
   <div class="fam" id="bloodtoof-red">
-    <h4 class="fam-name"><a href="#bloodtoof-red">Bloodtoof Red</a></h4>
+    <h3 class="fam-name"><a href="#bloodtoof-red">Bloodtoof Red</a></h3>
     <ol class="ramp" aria-label="Bloodtoof Red, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#581E16" title="Bloodtoof Red 1: #581E16">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -604,7 +415,7 @@
     </ol>
   </div>
   <div class="fam" id="chotec-orange">
-    <h4 class="fam-name"><a href="#chotec-orange">Chotec Orange</a></h4>
+    <h3 class="fam-name"><a href="#chotec-orange">Chotec Orange</a></h3>
     <ol class="ramp" aria-label="Chotec Orange, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#93150B" title="Chotec Orange 1: #93150B">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -634,7 +445,7 @@
     </ol>
   </div>
   <div class="fam" id="ta-unar-ochre">
-    <h4 class="fam-name"><a href="#ta-unar-ochre">Ta&#x27;unar Ochre</a></h4>
+    <h3 class="fam-name"><a href="#ta-unar-ochre">Ta&#x27;unar Ochre</a></h3>
     <ol class="ramp" aria-label="Ta&#x27;unar Ochre, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#BB5528" title="Ta&#x27;unar Ochre 1: #BB5528">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -665,9 +476,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-yellows-and-golds">
-  <h3 class="group-title" id="g-yellows-and-golds">Yellows and golds</h3>
+  <h2 class="group-title" id="g-yellows-and-golds">Yellows and golds</h2>
   <div class="fam" id="khemri-sands">
-    <h4 class="fam-name"><a href="#khemri-sands">Khemri Sands</a></h4>
+    <h3 class="fam-name"><a href="#khemri-sands">Khemri Sands</a></h3>
     <ol class="ramp" aria-label="Khemri Sands, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#6C4B12" title="Khemri Sands 1: #6C4B12">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -697,7 +508,7 @@
     </ol>
   </div>
   <div class="fam" id="hawkshroud-yellow">
-    <h4 class="fam-name"><a href="#hawkshroud-yellow">Hawkshroud Yellow</a></h4>
+    <h3 class="fam-name"><a href="#hawkshroud-yellow">Hawkshroud Yellow</a></h3>
     <ol class="ramp" aria-label="Hawkshroud Yellow, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#F69113" title="Hawkshroud Yellow 1: #F69113">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -727,7 +538,7 @@
     </ol>
   </div>
   <div class="fam" id="megaboss-yellow">
-    <h4 class="fam-name"><a href="#megaboss-yellow">Megaboss Yellow</a></h4>
+    <h3 class="fam-name"><a href="#megaboss-yellow">Megaboss Yellow</a></h3>
     <ol class="ramp" aria-label="Megaboss Yellow, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#F9AD00" title="Megaboss Yellow 1: #F9AD00">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -758,9 +569,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-greens">
-  <h3 class="group-title" id="g-greens">Greens</h3>
+  <h2 class="group-title" id="g-greens">Greens</h2>
   <div class="fam" id="plague-toad-venom">
-    <h4 class="fam-name"><a href="#plague-toad-venom">Plague Toad Venom</a></h4>
+    <h3 class="fam-name"><a href="#plague-toad-venom">Plague Toad Venom</a></h3>
     <ol class="ramp" aria-label="Plague Toad Venom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#49892D" title="Plague Toad Venom 1: #49892D">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -790,7 +601,7 @@
     </ol>
   </div>
   <div class="fam" id="kruleboyz-green">
-    <h4 class="fam-name"><a href="#kruleboyz-green">Kruleboyz Green</a></h4>
+    <h3 class="fam-name"><a href="#kruleboyz-green">Kruleboyz Green</a></h3>
     <ol class="ramp" aria-label="Kruleboyz Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#4A7D36" title="Kruleboyz Green 1: #4A7D36">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -820,7 +631,7 @@
     </ol>
   </div>
   <div class="fam" id="lustria-green">
-    <h4 class="fam-name"><a href="#lustria-green">Lustria Green</a></h4>
+    <h3 class="fam-name"><a href="#lustria-green">Lustria Green</a></h3>
     <ol class="ramp" aria-label="Lustria Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#004816" title="Lustria Green 1: #004816">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -850,7 +661,7 @@
     </ol>
   </div>
   <div class="fam" id="kasrkin-green">
-    <h4 class="fam-name"><a href="#kasrkin-green">Kasrkin Green</a></h4>
+    <h3 class="fam-name"><a href="#kasrkin-green">Kasrkin Green</a></h3>
     <ol class="ramp" aria-label="Kasrkin Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#001B1B" title="Kasrkin Green 1: #001B1B">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -880,7 +691,7 @@
     </ol>
   </div>
   <div class="fam" id="hierotek-green">
-    <h4 class="fam-name"><a href="#hierotek-green">Hierotek Green</a></h4>
+    <h3 class="fam-name"><a href="#hierotek-green">Hierotek Green</a></h3>
     <ol class="ramp" aria-label="Hierotek Green, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#00321C" title="Hierotek Green 1: #00321C">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -910,7 +721,7 @@
     </ol>
   </div>
   <div class="fam" id="green-morkshroom">
-    <h4 class="fam-name"><a href="#green-morkshroom">Green Morkshroom</a></h4>
+    <h3 class="fam-name"><a href="#green-morkshroom">Green Morkshroom</a></h3>
     <ol class="ramp" aria-label="Green Morkshroom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#143230" title="Green Morkshroom 1: #143230">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -941,9 +752,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-teals-and-blues">
-  <h3 class="group-title" id="g-teals-and-blues">Teals and blues</h3>
+  <h2 class="group-title" id="g-teals-and-blues">Teals and blues</h2>
   <div class="fam" id="seraphon-blue">
-    <h4 class="fam-name"><a href="#seraphon-blue">Seraphon Blue</a></h4>
+    <h3 class="fam-name"><a href="#seraphon-blue">Seraphon Blue</a></h3>
     <ol class="ramp" aria-label="Seraphon Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#002F34" title="Seraphon Blue 1: #002F34">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -973,7 +784,7 @@
     </ol>
   </div>
   <div class="fam" id="craventhrone-cloak">
-    <h4 class="fam-name"><a href="#craventhrone-cloak">Craventhrone Cloak</a></h4>
+    <h3 class="fam-name"><a href="#craventhrone-cloak">Craventhrone Cloak</a></h3>
     <ol class="ramp" aria-label="Craventhrone Cloak, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#08232E" title="Craventhrone Cloak 1: #08232E">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1003,7 +814,7 @@
     </ol>
   </div>
   <div class="fam" id="stormwolf-blue">
-    <h4 class="fam-name"><a href="#stormwolf-blue">Stormwolf Blue</a></h4>
+    <h3 class="fam-name"><a href="#stormwolf-blue">Stormwolf Blue</a></h3>
     <ol class="ramp" aria-label="Stormwolf Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#233F55" title="Stormwolf Blue 1: #233F55">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1033,7 +844,7 @@
     </ol>
   </div>
   <div class="fam" id="scinari-blue">
-    <h4 class="fam-name"><a href="#scinari-blue">Scinari Blue</a></h4>
+    <h3 class="fam-name"><a href="#scinari-blue">Scinari Blue</a></h3>
     <ol class="ramp" aria-label="Scinari Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#004789" title="Scinari Blue 1: #004789">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1063,7 +874,7 @@
     </ol>
   </div>
   <div class="fam" id="blue-gorkshroom">
-    <h4 class="fam-name"><a href="#blue-gorkshroom">Blue Gorkshroom</a></h4>
+    <h3 class="fam-name"><a href="#blue-gorkshroom">Blue Gorkshroom</a></h3>
     <ol class="ramp" aria-label="Blue Gorkshroom, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#002356" title="Blue Gorkshroom 1: #002356">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1093,7 +904,7 @@
     </ol>
   </div>
   <div class="fam" id="ultramar-blue">
-    <h4 class="fam-name"><a href="#ultramar-blue">Ultramar Blue</a></h4>
+    <h3 class="fam-name"><a href="#ultramar-blue">Ultramar Blue</a></h3>
     <ol class="ramp" aria-label="Ultramar Blue, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#001A42" title="Ultramar Blue 1: #001A42">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1124,9 +935,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-violets-and-magentas">
-  <h3 class="group-title" id="g-violets-and-magentas">Violets and magentas</h3>
+  <h2 class="group-title" id="g-violets-and-magentas">Violets and magentas</h2>
   <div class="fam" id="shalaxi-violet">
-    <h4 class="fam-name"><a href="#shalaxi-violet">Shalaxi Violet</a></h4>
+    <h3 class="fam-name"><a href="#shalaxi-violet">Shalaxi Violet</a></h3>
     <ol class="ramp" aria-label="Shalaxi Violet, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#130040" title="Shalaxi Violet 1: #130040">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1156,7 +967,7 @@
     </ol>
   </div>
   <div class="fam" id="enrapturess-dusk">
-    <h4 class="fam-name"><a href="#enrapturess-dusk">Enrapturess Dusk</a></h4>
+    <h3 class="fam-name"><a href="#enrapturess-dusk">Enrapturess Dusk</a></h3>
     <ol class="ramp" aria-label="Enrapturess Dusk, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#1E1435" title="Enrapturess Dusk 1: #1E1435">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1186,7 +997,7 @@
     </ol>
   </div>
   <div class="fam" id="hive-fleet-purple">
-    <h4 class="fam-name"><a href="#hive-fleet-purple">Hive Fleet Purple</a></h4>
+    <h3 class="fam-name"><a href="#hive-fleet-purple">Hive Fleet Purple</a></h3>
     <ol class="ramp" aria-label="Hive Fleet Purple, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#1E1A40" title="Hive Fleet Purple 1: #1E1A40">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1216,7 +1027,7 @@
     </ol>
   </div>
   <div class="fam" id="magnus-the-red">
-    <h4 class="fam-name"><a href="#magnus-the-red">Magnus the Red</a></h4>
+    <h3 class="fam-name"><a href="#magnus-the-red">Magnus the Red</a></h3>
     <ol class="ramp" aria-label="Magnus the Red, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#3A202D" title="Magnus the Red 1: #3A202D">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1246,7 +1057,7 @@
     </ol>
   </div>
   <div class="fam" id="eye-of-terror">
-    <h4 class="fam-name"><a href="#eye-of-terror">Eye of Terror</a></h4>
+    <h3 class="fam-name"><a href="#eye-of-terror">Eye of Terror</a></h3>
     <ol class="ramp" aria-label="Eye of Terror, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#920030" title="Eye of Terror 1: #920030">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1277,9 +1088,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-skin-wood-and-bone">
-  <h3 class="group-title" id="g-skin-wood-and-bone">Skin, wood and bone</h3>
+  <h2 class="group-title" id="g-skin-wood-and-bone">Skin, wood and bone</h2>
   <div class="fam" id="carthalos-skin">
-    <h4 class="fam-name"><a href="#carthalos-skin">Carthalos Skin</a></h4>
+    <h3 class="fam-name"><a href="#carthalos-skin">Carthalos Skin</a></h3>
     <ol class="ramp" aria-label="Carthalos Skin, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#241815" title="Carthalos Skin 1: #241815">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1309,7 +1120,7 @@
     </ol>
   </div>
   <div class="fam" id="celestine-skin">
-    <h4 class="fam-name"><a href="#celestine-skin">Celestine Skin</a></h4>
+    <h3 class="fam-name"><a href="#celestine-skin">Celestine Skin</a></h3>
     <ol class="ramp" aria-label="Celestine Skin, tones 1 to 5">
         <li class="sw sw--dark-label" style="--c:#CD8169" title="Celestine Skin 1: #CD8169">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1339,7 +1150,7 @@
     </ol>
   </div>
   <div class="fam" id="gnarlwood">
-    <h4 class="fam-name"><a href="#gnarlwood">Gnarlwood</a></h4>
+    <h3 class="fam-name"><a href="#gnarlwood">Gnarlwood</a></h3>
     <ol class="ramp" aria-label="Gnarlwood, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#342928" title="Gnarlwood 1: #342928">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1369,7 +1180,7 @@
     </ol>
   </div>
   <div class="fam" id="necrolith-bone">
-    <h4 class="fam-name"><a href="#necrolith-bone">Necrolith Bone</a></h4>
+    <h3 class="fam-name"><a href="#necrolith-bone">Necrolith Bone</a></h3>
     <ol class="ramp" aria-label="Necrolith Bone, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#877561" title="Necrolith Bone 1: #877561">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1400,9 +1211,9 @@
   </div>
 </section>
 <section class="group" aria-labelledby="g-greys">
-  <h3 class="group-title" id="g-greys">Greys</h3>
+  <h2 class="group-title" id="g-greys">Greys</h2>
   <div class="fam" id="dataslate-grey">
-    <h4 class="fam-name"><a href="#dataslate-grey">Dataslate Grey</a></h4>
+    <h3 class="fam-name"><a href="#dataslate-grey">Dataslate Grey</a></h3>
     <ol class="ramp" aria-label="Dataslate Grey, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#2B2D28" title="Dataslate Grey 1: #2B2D28">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1432,7 +1243,7 @@
     </ol>
   </div>
   <div class="fam" id="blackstone-void">
-    <h4 class="fam-name"><a href="#blackstone-void">Blackstone Void</a></h4>
+    <h3 class="fam-name"><a href="#blackstone-void">Blackstone Void</a></h3>
     <ol class="ramp" aria-label="Blackstone Void, tones 1 to 5">
         <li class="sw sw--light-label" style="--c:#000208" title="Blackstone Void 1: #000208">
           <span class="sw-tone" aria-hidden="true">1</span>
@@ -1466,49 +1277,12 @@
     </div>
 
     <p class="footnote">
-      Carmine Blades 3 is darker than Carmine Blades 2. That is how GW's chart prints it,
-      so it is left as printed.
+      Games Workshop doesn't publish colour codes for its paints. These were sampled from the
+      flat colour squares in GW's own Tone Pro chart images.
     </p>
     <p class="footnote">
-      Last checked 17 October 2026. Errors to
-      <a href="mailto:support@thinned.app">support@thinned.app</a>.
+      Corrections to <a href="mailto:support@thinned.app">support@thinned.app</a>.
     </p>
-  </div>
-</section>
-
-<hr class="rule" aria-hidden="true">
-
-<!-- ===== Mediums ===== -->
-<section id="mediums" aria-labelledby="mediums-title">
-  <div class="wrap">
-    <header class="section-head">
-      <h2 id="mediums-title">The two mediums</h2>
-      <p class="lede">Sold alongside the paints. Neither has pigment of its own.</p>
-    </header>
-
-    <div class="features">
-      <article class="feature">
-        <span class="idx">01</span>
-        <div class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 4.5 C 9 9, 6.8 12, 6.8 14.5 a5.2 5.2 0 0 0 10.4 0 C 17.2 12, 15 9, 12 4.5 Z"/>
-          </svg>
-        </div>
-        <h3>Shading Medium</h3>
-        <p>Thins the pigment in a Tone Pro paint without changing how it flows, so any tone can be used as a shade or a glaze.</p>
-      </article>
-
-      <article class="feature">
-        <span class="idx">02</span>
-        <div class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3C4142" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="8"/><path d="M12 7 L12 12 L15 14"/>
-          </svg>
-        </div>
-        <h3>Blending Medium</h3>
-        <p>Slows drying, which gives you longer to blend two tones into each other on the model.</p>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -1521,10 +1295,9 @@
       <span class="plate">In the Thinned app</span>
       <h2 id="app-title">All 150 Tone Pro paints are in Thinned</h2>
       <p>
-        Thinned is a painting journal for tabletop miniature painters. The paint library
-        holds every Tone Pro paint and both mediums, alongside more than 11,000 paints from
-        34 brands. Mark the pots you own and use them in your recipes. The colour wheel
-        shows them next to the rest of your collection.
+        Thinned is a painting journal for tabletop miniature painters. Every Tone Pro paint
+        is already in its library, next to 11,000 others from 34 brands. Mark the ones you
+        own and they show up in your recipes and on the colour wheel.
       </p>
       <div class="cta-row">
         <a class="store" href="https://apps.apple.com/gb/app/id6762445836" rel="noopener">
@@ -1574,7 +1347,6 @@
 
   <div class="legal">
     <p>Warhammer and Citadel are trademarks of Games Workshop Limited, used here only to identify the paints. Thinned is an independent app made by Yggdrasil Ventures Limited and is not affiliated with, endorsed by or sponsored by Games Workshop.</p>
-    <p>Hex values are approximations sampled from Games Workshop's published swatch artwork, not measurements of paint, and are provided without warranty.</p>
     <p>Published by Yggdrasil Ventures Limited, 124 City Road, London EC1V 2NX, United Kingdom.</p>
     <p>© 2026 Yggdrasil Ventures Limited. All rights reserved.</p>
   </div>
