@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warhammer Tone Pro colour chart: all 150 hex codes | Thinned</title>
+<meta name="description" content="Every Warhammer Tone Pro paint on one page: 30 colour families, tones 1 (darkest) to 5 (lightest), with hex codes sampled from Games Workshop's published swatches.">
+<link rel="canonical" href="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart">
+<meta name="theme-color" content="#FFF8E7">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Thinned">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Warhammer Tone Pro colour chart: all 150 hex codes">
+<meta property="og:description" content="30 colour families, five numbered tones each, a hex code for every pot.">
+<meta property="og:url" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart">
+<meta property="og:image" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A grid of all 150 Warhammer Tone Pro paint swatches, one column per colour family, five tones each.">
+<meta property="article:published_time" content="2026-10-17">
+<meta property="article:modified_time" content="2026-10-17">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Warhammer Tone Pro colour chart: all 150 hex codes">
+<meta name="twitter:description" content="30 colour families, five numbered tones each, a hex code for every pot.">
+<meta name="twitter:image" content="https://www.thinned.app/paints/warhammer-tone-pro-colour-chart.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Tokens (shared with index.html) ---------- */
+  :root{
+    --bg:          #FFF8E7;
+    --card:        #EDE4D3;
+    --ink:         #3C4142;
+    --meta:        #5E5344;
+    --meta-light:  #7A6E5A;
+    --accent:      #A67B5B;
+    --border:      #BBA88A;
+    --border-soft: #D8C9AA;
+    --white:       #FFFDF5;
+    --danger:      #C4746E;
+    --success:     #7A9A6D;
+
+    --maxw: 720px;
+    --gutter: 22px;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  /* ---------- Reset ---------- */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent); }
+  a:hover{ text-decoration-color: var(--accent); }
+  button{ font: inherit; color: inherit; }
+
+  body{
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ---------- Type ---------- */
+  h1,h2,h3,h4{
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.2;
+  }
+  p{ margin: 0 0 1em; text-wrap: pretty; }
+  .meta{ color: var(--meta); font-size: 14px; }
+  .vh{
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  section{ padding: 48px 0; }
+  @media (min-width: 720px){ section{ padding: 64px 0; } }
+  section[id], .fam, .group{ scroll-margin-top: 64px; }
+
+  .rule{
+    width: 72px; height: 1px;
+    background: var(--border);
+    border: 0;
+    margin: 20px auto;
+  }
+
+  /* ---------- Top rail ---------- */
+  .rail{
+    border-bottom: 1px solid var(--border-soft);
+    background: color-mix(in oklab, var(--bg) 85%, #fff);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(4px);
+  }
+  .rail-inner{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px var(--gutter);
+    max-width: var(--maxw); margin: 0 auto;
+  }
+  .wordmark{
+    display: inline-flex; align-items: center;
+    text-decoration: none; color: var(--ink);
+    font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; font-size: 13px;
+  }
+  .rail-meta{
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--meta-light);
+  }
+  @media (max-width: 480px){ .rail-meta{ display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top: 48px;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+  .plate{
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--meta);
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--card) 50%, var(--bg));
+  }
+  .hero h1{
+    font-size: clamp(26px, 5.6vw, 40px);
+    letter-spacing: 0.12em;
+    margin: 0 0 18px;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .hero .positioning{
+    max-width: 58ch;
+    margin: 0 auto;
+    color: var(--ink);
+  }
+
+  /* ---------- Chart ---------- */
+  #chart{ padding-top: 24px; }
+  .group{ padding: 0; margin-top: 30px; }   /* override the generic section padding */
+  .group:first-child{ margin-top: 0; }
+  .group-title{
+    font-size: 11px; letter-spacing: 0.24em; color: var(--meta);
+    padding-bottom: 10px; margin-bottom: 4px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .fam{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: center;
+  }
+  .fam:last-child{ border-bottom: 0; }
+  @media (min-width: 640px){
+    .fam{ grid-template-columns: 172px 1fr; gap: 18px; padding: 10px 0; }
+  }
+  .fam-name{ font-size: 12px; letter-spacing: 0.16em; line-height: 1.35; }
+  .ramp{
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
+  }
+  .sw{
+    position: relative;
+    background: var(--c);
+    border: 1px solid rgba(60, 65, 66, 0.18);
+    border-radius: 3px;
+    min-height: 60px;
+    overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 6px 7px;
+    line-height: 1;
+  }
+  @media (min-width: 640px){ .sw{ min-height: 66px; } }
+  .sw--dark-label{ color: var(--ink); }
+  .sw--light-label{ color: var(--white); }
+  .sw-tone{ font-weight: 400; font-size: 12px; letter-spacing: 0.04em; }
+  .sw-hex{
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: 0.02em;
+    opacity: 0.92;
+  }
+  @media (max-width: 389px){
+    .sw{ padding: 5px 4px; min-height: 54px; }
+    .sw-hex{ font-size: 9px; }
+  }
+  .footnote{
+    font-size: 13px; color: var(--meta-light); line-height: 1.55;
+    margin: 24px 0 0;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .footnote + .footnote{ border-top: 0; padding-top: 0; margin-top: 8px; }
+
+  /* ---------- App CTA ---------- */
+  .cta-card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px 24px 26px;
+    text-align: center;
+  }
+  @media (min-width: 640px){ .cta-card{ padding: 38px 40px 34px; } }
+  .cta-card h2{
+    font-size: clamp(18px, 3vw, 24px);
+    letter-spacing: 0.16em;
+    margin: 16px 0 14px;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .cta-card p{ max-width: 54ch; margin: 0 auto 1em; color: var(--ink); }
+  .cta-row{
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    margin: 22px 0 14px;
+  }
+  .store{
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink);
+    color: var(--white);
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    padding: 10px 18px 10px 14px;
+    text-decoration: none;
+    min-width: 188px;
+    transition: background .15s ease;
+  }
+  .store:hover{ background: #2a2e2f; }
+  .store .store-glyph{ width: 22px; height: 22px; flex: 0 0 22px; }
+  .store .store-glyph svg{ width: 22px; height: 22px; }
+  .store .store-copy{ display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+  .store .store-copy .small{
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: color-mix(in oklab, var(--white) 80%, transparent);
+    font-weight: 300;
+  }
+  .store .store-copy .big{
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 400; margin-top: 2px;
+  }
+  .cta-card .fine{ font-size: 12px; color: var(--meta-light); margin: 0 auto; }
+
+  /* ---------- Footer (shared with index.html) ---------- */
+  footer{
+    border-top: 1px solid var(--border-soft);
+    padding: 36px 0 40px;
+    margin-top: 20px;
+    background: color-mix(in oklab, var(--bg) 94%, var(--card));
+  }
+  footer .foot{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  @media (min-width: 640px){
+    footer .foot{ grid-template-columns: 1.2fr 1fr 1fr; }
+  }
+  footer h4{
+    font-size: 10px; letter-spacing: 0.22em; margin-bottom: 12px; color: var(--meta);
+  }
+  footer ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  footer ul a{ color: var(--ink); text-decoration: none; font-size: 14px; }
+  footer ul a:hover{ color: var(--accent); }
+  .foot-wordmark{
+    font-weight: 400; letter-spacing: 0.28em;
+    text-transform: uppercase; font-size: 13px; color: var(--ink);
+  }
+  .legal{
+    max-width: var(--maxw);
+    margin: 28px auto 0;
+    padding: 20px var(--gutter) 0;
+    border-top: 1px dashed var(--border);
+    font-size: 12px; color: var(--meta-light); line-height: 1.6;
+  }
+  .legal p{ margin: 0 0 6px; }
+
+  /* ---------- A11y / motion / print ---------- */
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: none !important; }
+  }
+  @media print{
+    .rail, #app, footer .foot{ display: none; }
+    section{ padding: 18px 0; }
+    .sw{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top rail -->
+<header class="rail" role="banner">
+  <div class="rail-inner">
+    <a class="wordmark" href="/" aria-label="Thinned — home">Thinned</a>
+    <span class="rail-meta">Paint reference</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== Hero ===== -->
+<section class="hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">Warhammer Tone Pro colour chart</h1>
+    <p class="positioning">
+      Warhammer Tone Pro is Games Workshop's newest paint range of 30 colours, each sold as
+      five numbered tones. Tone 1 is the darkest and tone 5 the lightest.
+    </p>
+  </div>
+</section>
+
+<!-- ===== The chart ===== -->
+<section id="chart" aria-label="Colour chart">
+  <div class="wrap">
+    <div class="chart">
+<!-- tone-pro-grid:start -->
+<section class="group" aria-labelledby="g-reds-and-oranges">
+  <h2 class="group-title" id="g-reds-and-oranges">Reds and oranges</h2>
+  <div class="fam" id="carmine-blades">
+    <h3 class="fam-name">Carmine Blades</h3>
+    <ol class="ramp" aria-label="Carmine Blades, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#3C262A" title="Carmine Blades 1: #3C262A">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Carmine Blades 1</span>
+          <code class="sw-hex">#3C262A</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#5B3539" title="Carmine Blades 2: #5B3539">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Carmine Blades 2</span>
+          <code class="sw-hex">#5B3539</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#750019" title="Carmine Blades 3: #750019">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Carmine Blades 3</span>
+          <code class="sw-hex">#750019</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#910022" title="Carmine Blades 4: #910022">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Carmine Blades 4</span>
+          <code class="sw-hex">#910022</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#C64D50" title="Carmine Blades 5: #C64D50">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Carmine Blades 5</span>
+          <code class="sw-hex">#C64D50</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="bloodtoof-red">
+    <h3 class="fam-name">Bloodtoof Red</h3>
+    <ol class="ramp" aria-label="Bloodtoof Red, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#581E16" title="Bloodtoof Red 1: #581E16">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Bloodtoof Red 1</span>
+          <code class="sw-hex">#581E16</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#94001E" title="Bloodtoof Red 2: #94001E">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Bloodtoof Red 2</span>
+          <code class="sw-hex">#94001E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#AD072B" title="Bloodtoof Red 3: #AD072B">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Bloodtoof Red 3</span>
+          <code class="sw-hex">#AD072B</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#D60020" title="Bloodtoof Red 4: #D60020">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Bloodtoof Red 4</span>
+          <code class="sw-hex">#D60020</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#EF353C" title="Bloodtoof Red 5: #EF353C">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Bloodtoof Red 5</span>
+          <code class="sw-hex">#EF353C</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="chotec-orange">
+    <h3 class="fam-name">Chotec Orange</h3>
+    <ol class="ramp" aria-label="Chotec Orange, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#93150B" title="Chotec Orange 1: #93150B">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Chotec Orange 1</span>
+          <code class="sw-hex">#93150B</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#B82F2D" title="Chotec Orange 2: #B82F2D">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Chotec Orange 2</span>
+          <code class="sw-hex">#B82F2D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#E04A33" title="Chotec Orange 3: #E04A33">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Chotec Orange 3</span>
+          <code class="sw-hex">#E04A33</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#F56230" title="Chotec Orange 4: #F56230">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Chotec Orange 4</span>
+          <code class="sw-hex">#F56230</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#F78030" title="Chotec Orange 5: #F78030">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Chotec Orange 5</span>
+          <code class="sw-hex">#F78030</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="ta-unar-ochre">
+    <h3 class="fam-name">Ta&#x27;unar Ochre</h3>
+    <ol class="ramp" aria-label="Ta&#x27;unar Ochre, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#BB5528" title="Ta&#x27;unar Ochre 1: #BB5528">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Ta&#x27;unar Ochre 1</span>
+          <code class="sw-hex">#BB5528</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#D27144" title="Ta&#x27;unar Ochre 2: #D27144">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Ta&#x27;unar Ochre 2</span>
+          <code class="sw-hex">#D27144</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#E78344" title="Ta&#x27;unar Ochre 3: #E78344">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Ta&#x27;unar Ochre 3</span>
+          <code class="sw-hex">#E78344</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#EA9B6B" title="Ta&#x27;unar Ochre 4: #EA9B6B">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Ta&#x27;unar Ochre 4</span>
+          <code class="sw-hex">#EA9B6B</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#E9B06E" title="Ta&#x27;unar Ochre 5: #E9B06E">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Ta&#x27;unar Ochre 5</span>
+          <code class="sw-hex">#E9B06E</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-yellows-and-golds">
+  <h2 class="group-title" id="g-yellows-and-golds">Yellows and golds</h2>
+  <div class="fam" id="khemri-sands">
+    <h3 class="fam-name">Khemri Sands</h3>
+    <ol class="ramp" aria-label="Khemri Sands, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#6C4B12" title="Khemri Sands 1: #6C4B12">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Khemri Sands 1</span>
+          <code class="sw-hex">#6C4B12</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#8D5E06" title="Khemri Sands 2: #8D5E06">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Khemri Sands 2</span>
+          <code class="sw-hex">#8D5E06</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#B1791E" title="Khemri Sands 3: #B1791E">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Khemri Sands 3</span>
+          <code class="sw-hex">#B1791E</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#CF8400" title="Khemri Sands 4: #CF8400">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Khemri Sands 4</span>
+          <code class="sw-hex">#CF8400</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#DC9A00" title="Khemri Sands 5: #DC9A00">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Khemri Sands 5</span>
+          <code class="sw-hex">#DC9A00</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="hawkshroud-yellow">
+    <h3 class="fam-name">Hawkshroud Yellow</h3>
+    <ol class="ramp" aria-label="Hawkshroud Yellow, tones 1 to 5">
+        <li class="sw sw--dark-label" style="--c:#F69113" title="Hawkshroud Yellow 1: #F69113">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Hawkshroud Yellow 1</span>
+          <code class="sw-hex">#F69113</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FBA200" title="Hawkshroud Yellow 2: #FBA200">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Hawkshroud Yellow 2</span>
+          <code class="sw-hex">#FBA200</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FEBB00" title="Hawkshroud Yellow 3: #FEBB00">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Hawkshroud Yellow 3</span>
+          <code class="sw-hex">#FEBB00</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FFD300" title="Hawkshroud Yellow 4: #FFD300">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Hawkshroud Yellow 4</span>
+          <code class="sw-hex">#FFD300</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FDE07E" title="Hawkshroud Yellow 5: #FDE07E">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Hawkshroud Yellow 5</span>
+          <code class="sw-hex">#FDE07E</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="megaboss-yellow">
+    <h3 class="fam-name">Megaboss Yellow</h3>
+    <ol class="ramp" aria-label="Megaboss Yellow, tones 1 to 5">
+        <li class="sw sw--dark-label" style="--c:#F9AD00" title="Megaboss Yellow 1: #F9AD00">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Megaboss Yellow 1</span>
+          <code class="sw-hex">#F9AD00</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#F8CE00" title="Megaboss Yellow 2: #F8CE00">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Megaboss Yellow 2</span>
+          <code class="sw-hex">#F8CE00</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FFE440" title="Megaboss Yellow 3: #FFE440">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Megaboss Yellow 3</span>
+          <code class="sw-hex">#FFE440</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#F8E85F" title="Megaboss Yellow 4: #F8E85F">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Megaboss Yellow 4</span>
+          <code class="sw-hex">#F8E85F</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FFF175" title="Megaboss Yellow 5: #FFF175">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Megaboss Yellow 5</span>
+          <code class="sw-hex">#FFF175</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-greens">
+  <h2 class="group-title" id="g-greens">Greens</h2>
+  <div class="fam" id="plague-toad-venom">
+    <h3 class="fam-name">Plague Toad Venom</h3>
+    <ol class="ramp" aria-label="Plague Toad Venom, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#49892D" title="Plague Toad Venom 1: #49892D">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Plague Toad Venom 1</span>
+          <code class="sw-hex">#49892D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#549B32" title="Plague Toad Venom 2: #549B32">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Plague Toad Venom 2</span>
+          <code class="sw-hex">#549B32</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#80C234" title="Plague Toad Venom 3: #80C234">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Plague Toad Venom 3</span>
+          <code class="sw-hex">#80C234</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#9CC829" title="Plague Toad Venom 4: #9CC829">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Plague Toad Venom 4</span>
+          <code class="sw-hex">#9CC829</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#C8D600" title="Plague Toad Venom 5: #C8D600">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Plague Toad Venom 5</span>
+          <code class="sw-hex">#C8D600</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="kruleboyz-green">
+    <h3 class="fam-name">Kruleboyz Green</h3>
+    <ol class="ramp" aria-label="Kruleboyz Green, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#4A7D36" title="Kruleboyz Green 1: #4A7D36">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Kruleboyz Green 1</span>
+          <code class="sw-hex">#4A7D36</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#627F3C" title="Kruleboyz Green 2: #627F3C">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Kruleboyz Green 2</span>
+          <code class="sw-hex">#627F3C</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#7A823F" title="Kruleboyz Green 3: #7A823F">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Kruleboyz Green 3</span>
+          <code class="sw-hex">#7A823F</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#939859" title="Kruleboyz Green 4: #939859">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Kruleboyz Green 4</span>
+          <code class="sw-hex">#939859</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#AEB16C" title="Kruleboyz Green 5: #AEB16C">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Kruleboyz Green 5</span>
+          <code class="sw-hex">#AEB16C</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="lustria-green">
+    <h3 class="fam-name">Lustria Green</h3>
+    <ol class="ramp" aria-label="Lustria Green, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#004816" title="Lustria Green 1: #004816">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Lustria Green 1</span>
+          <code class="sw-hex">#004816</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006929" title="Lustria Green 2: #006929">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Lustria Green 2</span>
+          <code class="sw-hex">#006929</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#007931" title="Lustria Green 3: #007931">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Lustria Green 3</span>
+          <code class="sw-hex">#007931</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#34AD40" title="Lustria Green 4: #34AD40">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Lustria Green 4</span>
+          <code class="sw-hex">#34AD40</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#4EB33F" title="Lustria Green 5: #4EB33F">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Lustria Green 5</span>
+          <code class="sw-hex">#4EB33F</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="kasrkin-green">
+    <h3 class="fam-name">Kasrkin Green</h3>
+    <ol class="ramp" aria-label="Kasrkin Green, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#001B1B" title="Kasrkin Green 1: #001B1B">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Kasrkin Green 1</span>
+          <code class="sw-hex">#001B1B</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#1F4530" title="Kasrkin Green 2: #1F4530">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Kasrkin Green 2</span>
+          <code class="sw-hex">#1F4530</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#40713C" title="Kasrkin Green 3: #40713C">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Kasrkin Green 3</span>
+          <code class="sw-hex">#40713C</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#678E55" title="Kasrkin Green 4: #678E55">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Kasrkin Green 4</span>
+          <code class="sw-hex">#678E55</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#86A978" title="Kasrkin Green 5: #86A978">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Kasrkin Green 5</span>
+          <code class="sw-hex">#86A978</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="hierotek-green">
+    <h3 class="fam-name">Hierotek Green</h3>
+    <ol class="ramp" aria-label="Hierotek Green, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#00321C" title="Hierotek Green 1: #00321C">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Hierotek Green 1</span>
+          <code class="sw-hex">#00321C</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#00542D" title="Hierotek Green 2: #00542D">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Hierotek Green 2</span>
+          <code class="sw-hex">#00542D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006A2E" title="Hierotek Green 3: #006A2E">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Hierotek Green 3</span>
+          <code class="sw-hex">#006A2E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#00894E" title="Hierotek Green 4: #00894E">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Hierotek Green 4</span>
+          <code class="sw-hex">#00894E</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#00B681" title="Hierotek Green 5: #00B681">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Hierotek Green 5</span>
+          <code class="sw-hex">#00B681</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="green-morkshroom">
+    <h3 class="fam-name">Green Morkshroom</h3>
+    <ol class="ramp" aria-label="Green Morkshroom, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#143230" title="Green Morkshroom 1: #143230">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Green Morkshroom 1</span>
+          <code class="sw-hex">#143230</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#004F48" title="Green Morkshroom 2: #004F48">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Green Morkshroom 2</span>
+          <code class="sw-hex">#004F48</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006458" title="Green Morkshroom 3: #006458">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Green Morkshroom 3</span>
+          <code class="sw-hex">#006458</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#007B6D" title="Green Morkshroom 4: #007B6D">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Green Morkshroom 4</span>
+          <code class="sw-hex">#007B6D</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#37AC83" title="Green Morkshroom 5: #37AC83">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Green Morkshroom 5</span>
+          <code class="sw-hex">#37AC83</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-teals-and-blues">
+  <h2 class="group-title" id="g-teals-and-blues">Teals and blues</h2>
+  <div class="fam" id="seraphon-blue">
+    <h3 class="fam-name">Seraphon Blue</h3>
+    <ol class="ramp" aria-label="Seraphon Blue, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#002F34" title="Seraphon Blue 1: #002F34">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Seraphon Blue 1</span>
+          <code class="sw-hex">#002F34</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#004650" title="Seraphon Blue 2: #004650">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Seraphon Blue 2</span>
+          <code class="sw-hex">#004650</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006874" title="Seraphon Blue 3: #006874">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Seraphon Blue 3</span>
+          <code class="sw-hex">#006874</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#008D92" title="Seraphon Blue 4: #008D92">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Seraphon Blue 4</span>
+          <code class="sw-hex">#008D92</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#00B7B9" title="Seraphon Blue 5: #00B7B9">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Seraphon Blue 5</span>
+          <code class="sw-hex">#00B7B9</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="craventhrone-cloak">
+    <h3 class="fam-name">Craventhrone Cloak</h3>
+    <ol class="ramp" aria-label="Craventhrone Cloak, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#08232E" title="Craventhrone Cloak 1: #08232E">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Craventhrone Cloak 1</span>
+          <code class="sw-hex">#08232E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#12373E" title="Craventhrone Cloak 2: #12373E">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Craventhrone Cloak 2</span>
+          <code class="sw-hex">#12373E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#164858" title="Craventhrone Cloak 3: #164858">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Craventhrone Cloak 3</span>
+          <code class="sw-hex">#164858</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#41717D" title="Craventhrone Cloak 4: #41717D">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Craventhrone Cloak 4</span>
+          <code class="sw-hex">#41717D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#598A8E" title="Craventhrone Cloak 5: #598A8E">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Craventhrone Cloak 5</span>
+          <code class="sw-hex">#598A8E</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="stormwolf-blue">
+    <h3 class="fam-name">Stormwolf Blue</h3>
+    <ol class="ramp" aria-label="Stormwolf Blue, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#233F55" title="Stormwolf Blue 1: #233F55">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Stormwolf Blue 1</span>
+          <code class="sw-hex">#233F55</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#405568" title="Stormwolf Blue 2: #405568">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Stormwolf Blue 2</span>
+          <code class="sw-hex">#405568</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#54697D" title="Stormwolf Blue 3: #54697D">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Stormwolf Blue 3</span>
+          <code class="sw-hex">#54697D</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#6E95A4" title="Stormwolf Blue 4: #6E95A4">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Stormwolf Blue 4</span>
+          <code class="sw-hex">#6E95A4</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#87AFB9" title="Stormwolf Blue 5: #87AFB9">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Stormwolf Blue 5</span>
+          <code class="sw-hex">#87AFB9</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="scinari-blue">
+    <h3 class="fam-name">Scinari Blue</h3>
+    <ol class="ramp" aria-label="Scinari Blue, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#004789" title="Scinari Blue 1: #004789">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Scinari Blue 1</span>
+          <code class="sw-hex">#004789</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#005895" title="Scinari Blue 2: #005895">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Scinari Blue 2</span>
+          <code class="sw-hex">#005895</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006C9A" title="Scinari Blue 3: #006C9A">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Scinari Blue 3</span>
+          <code class="sw-hex">#006C9A</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#0088BB" title="Scinari Blue 4: #0088BB">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Scinari Blue 4</span>
+          <code class="sw-hex">#0088BB</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#009AB9" title="Scinari Blue 5: #009AB9">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Scinari Blue 5</span>
+          <code class="sw-hex">#009AB9</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="blue-gorkshroom">
+    <h3 class="fam-name">Blue Gorkshroom</h3>
+    <ol class="ramp" aria-label="Blue Gorkshroom, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#002356" title="Blue Gorkshroom 1: #002356">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Blue Gorkshroom 1</span>
+          <code class="sw-hex">#002356</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#004487" title="Blue Gorkshroom 2: #004487">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Blue Gorkshroom 2</span>
+          <code class="sw-hex">#004487</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#0057A3" title="Blue Gorkshroom 3: #0057A3">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Blue Gorkshroom 3</span>
+          <code class="sw-hex">#0057A3</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#006CAD" title="Blue Gorkshroom 4: #006CAD">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Blue Gorkshroom 4</span>
+          <code class="sw-hex">#006CAD</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#007BB2" title="Blue Gorkshroom 5: #007BB2">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Blue Gorkshroom 5</span>
+          <code class="sw-hex">#007BB2</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="ultramar-blue">
+    <h3 class="fam-name">Ultramar Blue</h3>
+    <ol class="ramp" aria-label="Ultramar Blue, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#001A42" title="Ultramar Blue 1: #001A42">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Ultramar Blue 1</span>
+          <code class="sw-hex">#001A42</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#0F3062" title="Ultramar Blue 2: #0F3062">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Ultramar Blue 2</span>
+          <code class="sw-hex">#0F3062</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#0D4F88" title="Ultramar Blue 3: #0D4F88">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Ultramar Blue 3</span>
+          <code class="sw-hex">#0D4F88</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#436CA1" title="Ultramar Blue 4: #436CA1">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Ultramar Blue 4</span>
+          <code class="sw-hex">#436CA1</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#6D9ECF" title="Ultramar Blue 5: #6D9ECF">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Ultramar Blue 5</span>
+          <code class="sw-hex">#6D9ECF</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-violets-and-magentas">
+  <h2 class="group-title" id="g-violets-and-magentas">Violets and magentas</h2>
+  <div class="fam" id="shalaxi-violet">
+    <h3 class="fam-name">Shalaxi Violet</h3>
+    <ol class="ramp" aria-label="Shalaxi Violet, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#130040" title="Shalaxi Violet 1: #130040">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Shalaxi Violet 1</span>
+          <code class="sw-hex">#130040</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#262E6D" title="Shalaxi Violet 2: #262E6D">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Shalaxi Violet 2</span>
+          <code class="sw-hex">#262E6D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#324E99" title="Shalaxi Violet 3: #324E99">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Shalaxi Violet 3</span>
+          <code class="sw-hex">#324E99</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#6472B9" title="Shalaxi Violet 4: #6472B9">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Shalaxi Violet 4</span>
+          <code class="sw-hex">#6472B9</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#7E8BC8" title="Shalaxi Violet 5: #7E8BC8">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Shalaxi Violet 5</span>
+          <code class="sw-hex">#7E8BC8</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="enrapturess-dusk">
+    <h3 class="fam-name">Enrapturess Dusk</h3>
+    <ol class="ramp" aria-label="Enrapturess Dusk, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#1E1435" title="Enrapturess Dusk 1: #1E1435">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Enrapturess Dusk 1</span>
+          <code class="sw-hex">#1E1435</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#413549" title="Enrapturess Dusk 2: #413549">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Enrapturess Dusk 2</span>
+          <code class="sw-hex">#413549</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#534D5E" title="Enrapturess Dusk 3: #534D5E">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Enrapturess Dusk 3</span>
+          <code class="sw-hex">#534D5E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#6E6773" title="Enrapturess Dusk 4: #6E6773">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Enrapturess Dusk 4</span>
+          <code class="sw-hex">#6E6773</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#817A86" title="Enrapturess Dusk 5: #817A86">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Enrapturess Dusk 5</span>
+          <code class="sw-hex">#817A86</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="hive-fleet-purple">
+    <h3 class="fam-name">Hive Fleet Purple</h3>
+    <ol class="ramp" aria-label="Hive Fleet Purple, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#1E1A40" title="Hive Fleet Purple 1: #1E1A40">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Hive Fleet Purple 1</span>
+          <code class="sw-hex">#1E1A40</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#3C1E54" title="Hive Fleet Purple 2: #3C1E54">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Hive Fleet Purple 2</span>
+          <code class="sw-hex">#3C1E54</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#655192" title="Hive Fleet Purple 3: #655192">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Hive Fleet Purple 3</span>
+          <code class="sw-hex">#655192</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#8769B1" title="Hive Fleet Purple 4: #8769B1">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Hive Fleet Purple 4</span>
+          <code class="sw-hex">#8769B1</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#8F82AE" title="Hive Fleet Purple 5: #8F82AE">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Hive Fleet Purple 5</span>
+          <code class="sw-hex">#8F82AE</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="magnus-the-red">
+    <h3 class="fam-name">Magnus the Red</h3>
+    <ol class="ramp" aria-label="Magnus the Red, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#3A202D" title="Magnus the Red 1: #3A202D">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Magnus the Red 1</span>
+          <code class="sw-hex">#3A202D</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#4A123E" title="Magnus the Red 2: #4A123E">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Magnus the Red 2</span>
+          <code class="sw-hex">#4A123E</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#76003F" title="Magnus the Red 3: #76003F">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Magnus the Red 3</span>
+          <code class="sw-hex">#76003F</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#9A1B59" title="Magnus the Red 4: #9A1B59">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Magnus the Red 4</span>
+          <code class="sw-hex">#9A1B59</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#AA4277" title="Magnus the Red 5: #AA4277">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Magnus the Red 5</span>
+          <code class="sw-hex">#AA4277</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="eye-of-terror">
+    <h3 class="fam-name">Eye of Terror</h3>
+    <ol class="ramp" aria-label="Eye of Terror, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#920030" title="Eye of Terror 1: #920030">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Eye of Terror 1</span>
+          <code class="sw-hex">#920030</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#BD0047" title="Eye of Terror 2: #BD0047">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Eye of Terror 2</span>
+          <code class="sw-hex">#BD0047</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#C20060" title="Eye of Terror 3: #C20060">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Eye of Terror 3</span>
+          <code class="sw-hex">#C20060</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#D4417B" title="Eye of Terror 4: #D4417B">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Eye of Terror 4</span>
+          <code class="sw-hex">#D4417B</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#DB6499" title="Eye of Terror 5: #DB6499">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Eye of Terror 5</span>
+          <code class="sw-hex">#DB6499</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-skin-wood-and-bone">
+  <h2 class="group-title" id="g-skin-wood-and-bone">Skin, wood and bone</h2>
+  <div class="fam" id="carthalos-skin">
+    <h3 class="fam-name">Carthalos Skin</h3>
+    <ol class="ramp" aria-label="Carthalos Skin, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#241815" title="Carthalos Skin 1: #241815">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Carthalos Skin 1</span>
+          <code class="sw-hex">#241815</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#2D140C" title="Carthalos Skin 2: #2D140C">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Carthalos Skin 2</span>
+          <code class="sw-hex">#2D140C</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#4E2212" title="Carthalos Skin 3: #4E2212">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Carthalos Skin 3</span>
+          <code class="sw-hex">#4E2212</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#5F3A37" title="Carthalos Skin 4: #5F3A37">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Carthalos Skin 4</span>
+          <code class="sw-hex">#5F3A37</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#795346" title="Carthalos Skin 5: #795346">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Carthalos Skin 5</span>
+          <code class="sw-hex">#795346</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="celestine-skin">
+    <h3 class="fam-name">Celestine Skin</h3>
+    <ol class="ramp" aria-label="Celestine Skin, tones 1 to 5">
+        <li class="sw sw--dark-label" style="--c:#CD8169" title="Celestine Skin 1: #CD8169">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Celestine Skin 1</span>
+          <code class="sw-hex">#CD8169</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#D58B70" title="Celestine Skin 2: #D58B70">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Celestine Skin 2</span>
+          <code class="sw-hex">#D58B70</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#D99578" title="Celestine Skin 3: #D99578">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Celestine Skin 3</span>
+          <code class="sw-hex">#D99578</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#EAA889" title="Celestine Skin 4: #EAA889">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Celestine Skin 4</span>
+          <code class="sw-hex">#EAA889</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#DDB398" title="Celestine Skin 5: #DDB398">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Celestine Skin 5</span>
+          <code class="sw-hex">#DDB398</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="gnarlwood">
+    <h3 class="fam-name">Gnarlwood</h3>
+    <ol class="ramp" aria-label="Gnarlwood, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#342928" title="Gnarlwood 1: #342928">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Gnarlwood 1</span>
+          <code class="sw-hex">#342928</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#514235" title="Gnarlwood 2: #514235">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Gnarlwood 2</span>
+          <code class="sw-hex">#514235</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#725C44" title="Gnarlwood 3: #725C44">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Gnarlwood 3</span>
+          <code class="sw-hex">#725C44</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#776857" title="Gnarlwood 4: #776857">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Gnarlwood 4</span>
+          <code class="sw-hex">#776857</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#887B67" title="Gnarlwood 5: #887B67">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Gnarlwood 5</span>
+          <code class="sw-hex">#887B67</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="necrolith-bone">
+    <h3 class="fam-name">Necrolith Bone</h3>
+    <ol class="ramp" aria-label="Necrolith Bone, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#877561" title="Necrolith Bone 1: #877561">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Necrolith Bone 1</span>
+          <code class="sw-hex">#877561</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#B0916A" title="Necrolith Bone 2: #B0916A">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Necrolith Bone 2</span>
+          <code class="sw-hex">#B0916A</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#B99F7D" title="Necrolith Bone 3: #B99F7D">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Necrolith Bone 3</span>
+          <code class="sw-hex">#B99F7D</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#C1AB86" title="Necrolith Bone 4: #C1AB86">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Necrolith Bone 4</span>
+          <code class="sw-hex">#C1AB86</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#BCB79E" title="Necrolith Bone 5: #BCB79E">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Necrolith Bone 5</span>
+          <code class="sw-hex">#BCB79E</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<section class="group" aria-labelledby="g-greys">
+  <h2 class="group-title" id="g-greys">Greys</h2>
+  <div class="fam" id="dataslate-grey">
+    <h3 class="fam-name">Dataslate Grey</h3>
+    <ol class="ramp" aria-label="Dataslate Grey, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#2B2D28" title="Dataslate Grey 1: #2B2D28">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Dataslate Grey 1</span>
+          <code class="sw-hex">#2B2D28</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#3E3D35" title="Dataslate Grey 2: #3E3D35">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Dataslate Grey 2</span>
+          <code class="sw-hex">#3E3D35</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#555650" title="Dataslate Grey 3: #555650">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Dataslate Grey 3</span>
+          <code class="sw-hex">#555650</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#737069" title="Dataslate Grey 4: #737069">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Dataslate Grey 4</span>
+          <code class="sw-hex">#737069</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#878983" title="Dataslate Grey 5: #878983">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Dataslate Grey 5</span>
+          <code class="sw-hex">#878983</code>
+        </li>
+    </ol>
+  </div>
+  <div class="fam" id="blackstone-void">
+    <h3 class="fam-name">Blackstone Void</h3>
+    <ol class="ramp" aria-label="Blackstone Void, tones 1 to 5">
+        <li class="sw sw--light-label" style="--c:#000208" title="Blackstone Void 1: #000208">
+          <span class="sw-tone" aria-hidden="true">1</span>
+          <span class="vh">Blackstone Void 1</span>
+          <code class="sw-hex">#000208</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#4E5458" title="Blackstone Void 2: #4E5458">
+          <span class="sw-tone" aria-hidden="true">2</span>
+          <span class="vh">Blackstone Void 2</span>
+          <code class="sw-hex">#4E5458</code>
+        </li>
+        <li class="sw sw--light-label" style="--c:#6E7074" title="Blackstone Void 3: #6E7074">
+          <span class="sw-tone" aria-hidden="true">3</span>
+          <span class="vh">Blackstone Void 3</span>
+          <code class="sw-hex">#6E7074</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#9B9D9F" title="Blackstone Void 4: #9B9D9F">
+          <span class="sw-tone" aria-hidden="true">4</span>
+          <span class="vh">Blackstone Void 4</span>
+          <code class="sw-hex">#9B9D9F</code>
+        </li>
+        <li class="sw sw--dark-label" style="--c:#FFFFFF" title="Blackstone Void 5: #FFFFFF">
+          <span class="sw-tone" aria-hidden="true">5</span>
+          <span class="vh">Blackstone Void 5</span>
+          <code class="sw-hex">#FFFFFF</code>
+        </li>
+    </ol>
+  </div>
+</section>
+<!-- tone-pro-grid:end -->
+    </div>
+
+    <p class="footnote">
+      Games Workshop doesn't publish colour codes for its paints. These were sampled from the
+      flat colour squares in GW's own Tone Pro chart images.
+    </p>
+    <p class="footnote">
+      Corrections to <a href="mailto:support@thinned.app">support@thinned.app</a>.
+    </p>
+  </div>
+</section>
+
+<hr class="rule" aria-hidden="true">
+
+<!-- ===== In the app ===== -->
+<section id="app" aria-labelledby="app-title">
+  <div class="wrap">
+    <div class="cta-card">
+      <span class="plate">In the Thinned app</span>
+      <h2 id="app-title">All 150 Tone Pro paints are in Thinned</h2>
+      <p>
+        Thinned is a painting journal for tabletop miniature painters. Every Tone Pro paint
+        is already in its library, next to 11,000 others from 34 brands. Mark the ones you
+        own and they show up in your recipes and on the colour wheel.
+      </p>
+      <div class="cta-row">
+        <a class="store" href="https://apps.apple.com/gb/app/id6762445836" rel="noopener">
+          <span class="store-glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>
+          </span>
+          <span class="store-copy"><span class="small">Download on the</span><span class="big">App Store</span></span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.thinned.thinned" rel="noopener">
+          <span class="store-glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>
+          </span>
+          <span class="store-copy"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+        </a>
+      </div>
+      <p class="fine">Free to download. A one-time Pro unlock removes the project and recipe limits.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer role="contentinfo">
+  <div class="foot">
+    <div>
+      <span class="foot-wordmark">Thinned</span>
+      <p class="meta" style="margin-top:10px;font-size:13px;">A journal for miniature painters.<br>iOS and Android.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/paints/warhammer-tone-pro-colour-chart">Warhammer Tone Pro colour chart</a></li>
+        <li><a href="/privacy-policy">Privacy policy</a></li>
+        <li><a href="/terms-of-service">Terms of service</a></li>
+        <li><a href="/delete-account">Delete account</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:support@thinned.app">support@thinned.app</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="legal">
+    <p>Warhammer and Citadel are trademarks of Games Workshop Limited, used here only to identify the paints. Thinned is an independent app made by Yggdrasil Ventures Limited and is not affiliated with, endorsed by or sponsored by Games Workshop.</p>
+    <p>Published by Yggdrasil Ventures Limited, 124 City Road, London EC1V 2NX, United Kingdom.</p>
+    <p>© 2026 Yggdrasil Ventures Limited. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
